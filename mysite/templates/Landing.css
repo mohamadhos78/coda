@@ -1,0 +1,518 @@
+/* Font-face configuration */
+
+@font-face {
+    font-family: 'Yekan-N';
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan.woff') format('woff'),
+        url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Yekan-B';
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan-Bold.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan-Bold.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan-Bold.woff') format('woff'),
+        url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+a{
+    color: black;
+}
+
+/* Main */
+
+#Main{
+    font-family: Yekan-N;
+    background-image: url('Dependencies/Images/Back/Landing\ -\ 768.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+
+/* Navbar */
+
+#Navbar {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0);
+    margin-top: 10px;
+    height: 70px;
+    width: 1366px;
+}
+
+#Navbar_Right{
+    color: black;
+}
+
+#Navbar_Right_Logo_IMG{
+    margin: 10px;
+    width: 70px;
+    text-align: center;
+}
+
+#Navbar_Right_Blog_H6{
+    margin: 20px 0px 20px 0px;
+    text-align: center;
+}
+
+#Navbar_Right_Contact_H6{
+    margin: 20px 0px 20px 0px;
+    text-align: center;
+}
+
+#Navbar_Left{
+    color: orangered;
+}
+
+#Navbar_Left_Costs_H6{
+    margin: 20px 0px 20px 0px;
+    text-align: center;
+}
+
+#Navbar_Left_Projects_H6{
+    margin: 20px 0px 20px 0px;
+    text-align: center;
+}
+
+#Navbar_Left_Contact_Sign_Button{
+    margin: 10px 0px 0px 0px;
+    height: 45px;
+    width: 135px;
+}
+
+#Navbar_Left_Contact_Sign_Button_Text_H6{
+    text-align: center;
+    margin: 5px 0px 0px 0px;
+}
+
+#Navbar_Left_Contact_Sign_Button_Icon_IMG{
+    margin: 2px -25px 3px 0px;
+}
+
+#Navbar_Left_Contact_Hamburger_IMG{
+    margin: 20px 0px 20px 0px;
+}
+
+#Navbar_Left_Contact_Sign_Button{
+    
+}
+
+
+
+/* Header */
+
+#Header{
+    padding-bottom: 200px;
+    background-image: url('Dependencies/Images/Header/RightHeader.png');
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: right;
+}
+
+#Header_Right{
+    
+}
+
+#Header_Right_Row{
+    text-align: center;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+#Header_Right_Title{
+    margin-top:90px;
+    height: 120px;
+}
+
+#Header_Right_Title_H1{
+    font-size: 50px;
+    color: white;
+}
+
+#Header_Right_Paragraph{
+    height: 130px;
+    margin-top: 15px;
+}
+
+#Header_Right_Paragraph_H3{
+    line-height: 40px;
+    color: white;
+}
+
+#Header_Left{
+    
+}
+
+#Header_Left_Row{
+    margin: 150px 0px 0px 0px;
+    text-align: center;
+}
+
+#Header_Left_Title{
+   
+}
+
+#Header_Left_Title_H1{
+    text-align: center;
+    font-size: 55px;
+    color: orangered;
+}
+
+#Header_Left_Input{
+    margin: 20px 30px 0px 0px;
+    height: 75px;
+}
+
+#Header_Left_Input_Form{
+    text-align: center;
+}
+
+#Header_Left_Input_Form_NumberInput{
+    background-color: rgb(255, 236, 230);
+    border-color: chocolate;
+    height: 60px;
+    width: 300px;
+    border-radius: 40px;
+}
+
+#Header_Left_Input_Form_ButtonInput{
+    border-color: orangered;
+    margin: 5px;
+    font-family: Yekan-B;
+    height: 50px;
+    width: 50px;
+    margin-right: -55px;
+    margin-top: 5px;
+    background-image: url('Dependencies/Images/Navbar/Button/ButtonIcon.png');
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-size: 40%; 
+}
+
+#Header_Left_Caption{
+    height: 100px;
+}
+
+#Header_Left_Caption_H6{
+    text-align: center;
+    font-size: 13px;
+}
+
+
+
+/* Our Differences */
+
+#OurDifference{
+    margin-top: 120px;
+
+}
+
+#OurDifference_Item_3_Caption{
+    text-align: center;
+    margin-top: 10px;
+}
+
+#OurDifference_Item_3_Caption_Title_H1{
+    text-align: center;
+}
+
+#OurDifference_Item_3_Caption_Number_H1{
+    text-align: center;
+    color: orangered;
+    font-size: 150px;
+    margin-top: -40px;
+    margin-right: -65px;
+}
+
+#OurDifference_Item_2_Caption{
+    text-align: center;
+    margin-top: 10px;
+}
+
+#OurDifference_Item_2_Caption_Title_H1{
+    text-align: center;
+}
+
+#OurDifference_Item_2_Caption_Number_H1{
+    text-align: center;
+    color: orangered;
+    font-size: 150px;
+    margin-top: -40px;
+    margin-right: -65px;
+}
+
+#OurDifference_Item_1_Caption{
+    text-align: center;
+    margin-top: 10px;
+}
+
+#OurDifference_Item_1_Caption_Title_H1{
+    text-align: center;
+}
+
+#OurDifference_Item_1_Caption_Number_H1{
+    text-align: center;
+    color: orangered;
+    font-size: 150px;
+    margin-top: -40px;
+    margin-right: -65px;
+}
+
+#OurDifference_Title_H1{
+    font-size: 50px;    
+    text-align: left;
+}
+
+#OurDifference_Title2{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#OurDifference_Title2_H1{
+    text-align: center;
+}
+
+
+
+/* Blog */
+
+#Blog{
+    padding-bottom: 150px;
+    padding-top: 150px;
+    background-image: url('Dependencies/Images/Posts/BottomBack.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    margin: 70px 0px 50px 0px;
+}
+
+#Blog_Slider_Content{
+    border-radius: 30px;
+    overflow: hidden;
+    border-color: black;
+}
+
+#Blog_Slider_Content_Inner_ItemActive_Caption_H1{
+    font-size: 45px;
+    margin-bottom: 20px;
+    margin-left: 600px;
+}
+
+#Blog_Slider_Content_Inner_ItemActive_Caption_H5{
+    font-size: 21px;
+    margin-bottom: 40px;
+    margin-left: 600px;
+    line-height: 35px;
+}
+
+#Blog_Slider_Content_Inner_ItemActive_Caption_BUTTON{
+    margin: 0px 0px 100px 620px;
+    height: 45px;
+    width: 140px;
+}
+
+#Blog_Slider_Content_Inner_Item2_Caption_H1{
+    font-size: 45px;
+    margin-bottom: 20px;
+    margin-left: 600px;
+}
+
+#Blog_Slider_Content_Inner_Item2_Caption_H5{
+    font-size: 21px;
+    margin-bottom: 40px;
+    margin-left: 600px;
+    line-height: 35px;
+}
+
+#Blog_Slider_Content_Inner_Item2_Caption_BUTTON{
+    margin: 0px 0px 120px 620px;
+    height: 45px;
+    width: 140px;
+}
+
+#Blog_Slider_Content_Inner_Item3_Caption_H1{
+    font-size: 45px;
+    margin-bottom: 20px;
+    margin-left: 600px;
+}
+
+#Blog_Slider_Content_Inner_Item3_Caption_H5{
+    font-size: 21px;
+    margin-bottom: 40px;
+    margin-left: 600px;
+    line-height: 35px;
+}
+
+#Blog_Slider_Content_Inner_Item3_Caption_BUTTON{
+    margin: 0px 0px 120px 620px;
+    height: 45px;
+    width: 140px;
+}
+
+
+
+
+/* Team */
+
+#Team{
+    margin: 150px 50px 0px 50px;
+}
+
+#Team_Slider_Content{
+    
+}
+
+#Team_Slider_Content_Social{
+    width: 50px;
+
+    margin-bottom: 20px;
+}
+
+#Team_Slider_Content_Social_Form_BUTTON1{
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+}
+
+#Team_Slider_Content_Social_Form_BUTTON2{
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+}
+
+#Team_Slider_Content_Social_Form_BUTTON3{
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+}
+
+#Team_Slider_Content_Social_Form_BUTTON4{
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+}
+
+#Team_Slider_Content_User{
+    width: 100px;
+}
+
+#Team_Slider_Content_User_Capion_IMG{
+    text-align: center;
+    
+    width: 500px;
+}
+
+#Team_Slider_Content_User_Capion_H2{
+    text-align: center;
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.733);
+}
+
+#Team_Slider_Content_User_Capion_H6{
+    text-align: center;
+    color: rgba(0, 0, 0, 0.644);
+}
+
+#Team_Slider_Content_User_Capion_H1{
+    text-align: center;
+    font-size: 35px;
+    line-height: 55px;
+    margin-top: 90px;
+}
+
+#Team_Slider_Content_Caption{
+    width: 500px;
+    text-align: center;
+    background-image: url('Dependencies/Images/Teams/Qut.png');
+    background-repeat: no-repeat;
+    background-size: 110%;
+    background-position: center;
+}
+
+#Team_Slider_Content_Capion_H1{
+    text-align: center;
+    margin-top: 60px;
+}
+
+
+/* Portfolio */
+
+#Porfolio{
+    margin-top: 100px;
+}
+
+#Portfolio_Content_H1{
+    font-size: 70px;
+    text-align: center;
+}
+
+
+
+/* Footer */
+
+#Footer{
+    margin-top: 100px;
+}
+
+#Footer_Content_H5{
+    margin: 30px 0px 30px 0px;
+    text-align: center; 
+}
+
+
+
+/*-----------------------------------------------------------*/
+
+.mainbutton {
+    border-radius: 25px;
+}
+
+.orangebutton{
+    background-color:orangered;
+    border-color: orangered;
+    color: white;
+}
+
+.whitebutton {
+    background-color:white;
+    border-color: white;
+    color: black;
+}
+
+.greenbutton {
+    background-color:rgb(39, 204, 121);
+    border-color: rgb(39, 204, 121);
+    color: white;
+    font-family: Yekan-N;
+    width: 100%;
+}
+
+
+
+/* H's Right-Align */
+
+h1{
+    text-align: right;
+}
+
+h2{
+    text-align: right;
+}
+
+h3{
+    text-align: right;
+}
+
+h4{
+    text-align: right;
+}
+
+h5{
+    text-align: right;
+}
+
+h6{
+    text-align: right;
+}
