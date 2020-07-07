@@ -9,7 +9,8 @@ admin.site.register(Article , ArticleAdmin)
 
 class UserProfileAdmin(admin.ModelAdmin):
     list_display = ['user' , 'avatar']
-    
+
+
 admin.site.register(UserProfile , UserProfileAdmin)
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -18,7 +19,12 @@ class CategoryAdmin(admin.ModelAdmin):
 admin.site.register(Category , CategoryAdmin)
 class emailservicemodelAdmin(admin.ModelAdmin):
     list_display = ['email','name','family']
-    
+
+
 admin.site.register(emailservicemodel , emailservicemodelAdmin)
 
-admin.site.register(Skill)
+class contact_usAdmin(admin.ModelAdmin):
+    search_fields = ['name' , 'email','text']
+    list_display = ['name' , 'email' , 'phone']
+
+admin.site.register(contact_us , contact_usAdmin)

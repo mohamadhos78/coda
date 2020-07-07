@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'vm-^c@39t68gd3ix=q4stw$)z0trflfbdjxxsq6^*mi9*j@(!@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG =True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['hicoda.ir','www.hicoda.ir','5.253.24.149']
 
 
 # Application definition
@@ -129,4 +129,4 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 
 # Media Settings
 MEDIA_URL = '/files/'
-MEDIA_ROOT = os.path.join(BASE_DIR, '')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'files')

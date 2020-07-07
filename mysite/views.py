@@ -6,39 +6,61 @@ from .forms import emailservice
 
 
 class contactpage(TemplateView):
-    template_name = "Landing.htm"
-
+    template_name = "contact.htm"
 class index(TemplateView):
-    def get(self , request , **kwargs):
-        form = emailservice()
-        
-        article_data=[]
-        all_article=Article.objects.all()[:9]
-        for article in all_article:
-            article_data.append({
-                'title': article.title , 
-                'created_at' :article.created_at.date ,
-                'cover' : article.cover.url ,
-                'category' : article.category ,
-            })
-        promoted_post = []
-        all_promote = Article.objects.filter(promote=True)
-        for promoted in all_promote:
-            promoted_post.append({
-                'promoted_title' : promoted.title , 
-                'promoted_author' :promoted.author.user.first_name +' '+promoted.author.user.last_name  ,
-                'promoted_cover' :promoted.cover.url if promoted.cover else None,
-                'promoted_category' : promoted.category.title ,
-                'promoted_created_at' :promoted.created_at.date ,
-                'promoted_avatar' :promoted.author.avatar.url if promoted.author.avatar else None ,
-            })
-        context = {
-            'article_data' : article_data , 
-            'promoted_post' : promoted_post ,
-            'form':form , 
-        }
-        return render(request , 'index.html' , context)
+    users = []
+    posts = []
+    user_query = UserProfile.objects.all()
+    post_query = Article.objects.filter(promote=True)
+    for a in user_query:
+        users.append({
+        'name':a.user.first_name+' '+a.user.last_name ,
+        'img':a.avatar.url ,
+        'description':a.description , 
+        'theory':a.theory ,
+        })
+    for b in post_query:
+        posts.append({
+        'author':b.author ,
+        'cover':b.cover.url ,
+        'content':b.content , 
+        'category':b.category,
+        'title':b.title ,
+        })     
+    def get(self, request, **kwargs):
+        if request.method == "POST":
+            filled_form = emailservice(request.POST)
+            if filled_form.is_valid():
+                filled_form.save()
+            else:
+                form = emailservice()
+            context = {
+                'form' : form  ,
+            }
+            return render(request , 'index.htm'  ,context)
+        else:   
+            form = emailservice()
+            context ={
+                'users':self.users ,
+                'posts':self.posts ,
+                'form': form ,
+            }
+            return render(request,"index.htm", context)
 
+    def post(self, request, **kwargs):
+        form = emailservice()
+        filled_form = emailservice(request.POST)
+        if filled_form.is_valid():
+            filled_form.save()
+        else:
+            form = emailservice()
+        form = emailservice()
+        context ={
+            'users':self.users ,
+            'posts':self.posts ,
+            'form': form
+        }
+        return render(request,"index.htm", context)
 
 def signup(request):
     member_skill = Skill.objects.all()
@@ -68,7 +90,6 @@ def signup(request):
         #     skills.append({
         #         'skill_objects' :skill.title ,
         #     })
-            
         form = emailservice()
         note = 'welcome to signup page '
         return render(request , 'Form.htm' , {'form': form , 'note':note ,'skills':skills})
