@@ -27,7 +27,6 @@ function showPage() {
 }
 /**************** page-loader ****************/
 
-
 $('[data-toggle="tooltip"]').tooltip({
   delay: {
       show: 10000,
@@ -35,12 +34,11 @@ $('[data-toggle="tooltip"]').tooltip({
   }
 });
 
-
 /**************** navbar-scroll ****************/
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 900 || document.documentElement.scrollTop > 900) {
+  if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
     document.getElementById("navbar-scroll").style.top = "0";
   }
   else {
@@ -48,7 +46,7 @@ function scrollFunction() {
   }
 }
 /**************** navbar-scroll ****************/
-
+ 
 /**************** fix-width ****************/
 function resize() {
   if ( $(window).width() > 1370) {     

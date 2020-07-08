@@ -40,16 +40,16 @@
 
         <!--social-bar-->
         <div id="social-bar" class="position-fixed">
-            <a href="instagram.com/hicoda.ir">
+            <a href="www.instagram.com/hicoda.ir">
                 <img id="social-bar-1" class="social-bar-icon" src="static/index/Dependencies/Images/social/instagram.png">
             </a>
-            <a href="telegram.com/hicoda.ir">
+            <a href="www.telegram.com/hicoda.ir">
                 <img id="social-bar-2" class="social-bar-icon" src="static/index/Dependencies/Images/social/telegram.png">
             </a>
-            <a href="bale.com/hicoda.ir">
+            <a href="www.bale.com/hicoda.ir">
                 <img id="social-bar-3" class="social-bar-icon" src="static/index/Dependencies/Images/social/bale.png">
             </a>
-            <a href="hithub.com/hicoda.ir">
+            <a href="www.hithub.com/hicoda.ir">
                 <img id="social-bar-4" class="social-bar-icon" src="static/index/Dependencies/Images/social/github.png">
             </a>
         </div>
@@ -61,7 +61,7 @@
                 <div id="navbar-right" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-4 col-auto ml-auto">
                     <div id="navbar-right-row" class="row d-flex justify-content-center">    
                         <div id="navbar-right-logo" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 d-flex justify-content-center align-self-center">
-                            <a href="#">
+                            <a href="www.hicoda.ir">
                                 <img id="navbar-right-logo-img" src="static/index/Dependencies/Images/Logo/logo.png"/>
                             </a>
                         </div>
@@ -73,7 +73,7 @@
                             </a>
                         </div>
                         <div id="navbar-right-contact" class="col-xl-2 col-lg-2 col-md-2 col-sm-2 d-none d-md-block justify-content-center align-self-end">
-                            <a href="static/index/contact.htm" style="text-decoration: none; color: white;">
+                            <a href="{% url 'contact_us' %}" style="text-decoration: none; color: white;">
                                 <h6 id="navbar-right-contact-h6" type="button">
                                     ارتباط
                                 </h6>
@@ -171,44 +171,48 @@
                 </div>
             </div>
             <!--navbar-scroll-->
+
+            <!--modal-->
             
-            <!--modal-->
-            <div id="navbar-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                <div class="modal-dialog d-flex justify-content-center" role="document">
-                    <!--modal-base-->
-                    <div id="navbar-modal-content" class="modal-content">
-                        <button id="navbar-modal-close" type="button" class="btn close col-2" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <div id="navbar-modal-title" class="row d-flex justify-content-center">
-                            <h3 id="navbar-modal-title-h3" class="row d-flex justify-content-center">
-                                از دیدن شما خیلی خوشحالیم!
-                            </h3>
+                <!--modal-->
+                <div id="navbar-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                    <div class="modal-dialog d-flex justify-content-center" role="document">
+                        <!--modal-base-->
+                        <div id="navbar-modal-content" class="modal-content">
+                            <button id="navbar-modal-close" type="button" class="btn close col-2" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <div id="navbar-modal-title" class="row d-flex justify-content-center">
+                                <h3 id="navbar-modal-title-h3" class="row d-flex justify-content-center">
+                                    از دیدن شما خیلی خوشحالیم!
+                                </h3>
+                            </div>
+                            <div id="navbar-modal-sign" class="row d-flex justify-content-center">
+                                <form id="navbar-modal-form" class="row d-flex justify-content-center">                                                 
+                                    <input id="navbar-modal-form-input1" type="text" placeholder=" نام و نام خانوادگی " class="form-control" required>
+                                    <input id="navbar-modal-form-input2" type="number" placeholder="شماره تماس" class="form-control" required>
+                                    <input id="navbar-modal-form-input3" type="email" placeholder="پست الکترونیکی" class="form-control" required>
+                                    <input id="navbar-modal-form-button" type="submit" class="btn btn-secondary btn-light button1" value="">
+                                </form>
+                            </div>
+                            <div id="navbar-modal-caption" class="row d-flex justify-content-center">
+                                <h4 id="navbar-modal-caption-h4" style="margin: 6px 0px 0px 0px;">
+                                    لازم نیست کار دیگه ای بکنی. ما باهات تماس می گیریم.
+                                </h4>
+                            </div>
+                            <div id="navbar-modal-social" class="row d-flex justify-content-center">
+                                <button id="navbar-modal-social-1" class="btn"></button>
+                                <button id="navbar-modal-social-2" class="btn"></button>
+                                <button id="navbar-modal-social-3" class="btn"></button>
+                                <button id="navbar-modal-social-4" class="btn"></button>
+                            </div>
                         </div>
-                        <div id="navbar-modal-sign" class="row d-flex justify-content-center">
-                            <form id="navbar-modal-form" class="row d-flex justify-content-center">                                                 
-                                <input id="navbar-modal-form-input1" type="text" placeholder=" نام و نام خانوادگی " class="form-control" required>
-                                <input id="navbar-modal-form-input2" type="number" placeholder="شماره تماس" class="form-control" required>
-                                <input id="navbar-modal-form-input3" type="email" placeholder="پست الکترونیکی" class="form-control" required>
-                                <input id="navbar-modal-form-button" type="submit" class="btn btn-secondary btn-light button1" value="">
-                            </form>
-                        </div>
-                        <div id="navbar-modal-caption" class="row d-flex justify-content-center">
-                            <h4 id="navbar-modal-caption-h4" style="margin: 6px 0px 0px 0px;">
-                                لازم نیست کار دیگه ای بکنی. ما باهات تماس می گیریم.
-                            </h4>
-                        </div>
-                        <div id="navbar-modal-social" class="row d-flex justify-content-center">
-                            <button id="navbar-modal-social-1" class="btn"></button>
-                            <button id="navbar-modal-social-2" class="btn"></button>
-                            <button id="navbar-modal-social-3" class="btn"></button>
-                            <button id="navbar-modal-social-4" class="btn"></button>
-                        </div>
+                        <!--modal-base-->
                     </div>
-                    <!--modal-base-->
                 </div>
-            </div>
+                <!--modal-->
             <!--modal-->
+
             
             <!--hamburger menu-->
             <div id="side-nav" class="sidenav">
@@ -243,7 +247,7 @@
                     <a href="static/index/Blog.htm" style="text-decoration: none; color: black;">
                         <button id="side-nav-1-social-button1" class="btn nav-item">بلاگ</button>
                     </a>
-                    <a href="static/index/Contact.htm" style="text-decoration: none; color: black;">
+                    <a href="static/index/contact.htm" style="text-decoration: none; color: black;">
                         <button id="side-nav-1-social-button1" class="btn nav-item">مرتبط شیم</button>
                     </a>
                     <a href="static/index/Costs.htm" style="text-decoration: none; color: black;">
@@ -318,95 +322,57 @@
 
             <!--team-->
             <div id="team" class="row d-flex justify-content-center">
-                <h1 id="team-title" class="col-12 d-flex justify-content-center align-self-center">و اما اعضای تیم:</h1>
+                <h1 id="team-title" class="col-12 d-flex justify-content-center align-self-center">تیم ما</h1>
                 <div id="team-slider" class="col-10 justify-content-center carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <div class="row">
-                            <div class="row col-xl-5 col-lg-5 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center align-self-center">
-                                <div id="team-slider-iteam-social" class="row col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12 d-none d-lg-block justify-content-center align-self-center">
-                                    <button id="team-slider-iteam-social-1" class="btn btn-warning button-social">
-                                        <img class="icon-social" src="static/index/Dependencies/Images/social/telegram2.png">
-                                    </button>
-                                    <button id="team-slider-iteam-social-2" class="btn btn-warning button-social">
-                                        <img class="icon-social" src="static/index/Dependencies/Images/Teams/Logo/Instagram-logo.png">
-                                    </button>
-                                    <button id="team-slider-iteam-social-3" class="btn btn-warning button-social">
-                                        <img class="icon-social" src="static/index/Dependencies/Images/social/git4.png">
-                                    </button>
-                                    <button id="team-slider-iteam-social-4" class="btn btn-warning button-social"></button>
-                                </div>
-                                <div class="row col-xl-10 col-lg-10 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center align-self-center">
-                                    <img id="team-slider-item-user" class="justify-content-center" src="static/index/Dependencies/Images/Teams/User.png">
-                                    <h2 class="col-12 justify-content-center" class="justify-content-center" style="text-align: center;">
-                                        محمدامین عزیزی
-                                    </h2>
-                                    <h5 class="col-12 justify-content-center" style="text-align: center;">
-                                        توسعه دهنده رابط کاربری
-                                    </h5>
-                                </div>
-                            </div>
-                            <h1 id="team-slider-item-caption" class="col-xl-7 col-lg-7 d-none d-lg-block justify-content-center align-self-center">
-                                تو به آرزوهات یه رسیدن بدهکاری!
-                            </h1>
-                        </div>
-                        <div id="team-slider-iteam-social" class="row col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12 d-lg-none justify-content-center align-self-center">
-                            <button id="team-slider-iteam-social-1" class="btn btn-warning button-social">
-                                <img class="icon-social" src="static/index/Dependencies/Images/social/telegram2.png">
-                            </button>
-                            <button id="team-slider-iteam-social-2" class="btn btn-warning button-social">
-                                <img class="icon-social" src="static/index/Dependencies/Images/Teams/Logo/Instagram-logo.png">
-                            </button>
-                            <button id="team-slider-iteam-social-3" class="btn btn-warning button-social">
-                                <img class="icon-social" src="static/index/Dependencies/Images/social/git4.png">
-                            </button>
-                            <button id="team-slider-iteam-social-4" class="btn btn-warning button-social"></button>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <div class="row">
-                            <div class="row col-xl-5 col-lg-5 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center align-self-center">
-                                <div id="team-slider-iteam-social" class="row col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12 d-none d-lg-block justify-content-center align-self-center">
-                                    <button id="team-slider-iteam-social-1" class="btn btn-warning button-social">
-                                        <img class="icon-social" src="static/index/Dependencies/Images/social/telegram2.png">
-                                    </button>
-                                    <button id="team-slider-iteam-social-2" class="btn btn-warning button-social">
-                                        <img class="icon-social" src="static/index/Dependencies/Images/Teams/Logo/Instagram-logo.png">
-                                    </button>
-                                    <button id="team-slider-iteam-social-3" class="btn btn-warning button-social">
-                                        <img class="icon-social" src="static/index/Dependencies/Images/social/git4.png">
-                                    </button>
-                                    <button id="team-slider-iteam-social-4" class="btn btn-warning button-social"></button>
-                                </div>
-                                <div class="row col-xl-10 col-lg-10 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center align-self-center">
-                                    <img id="team-slider-item-user" class="justify-content-center" src="static/index/Dependencies/Images/Teams/User.png">
-                                    <h2 class="col-12 justify-content-center" class="justify-content-center" style="text-align: center;">
-                                        محمدامین عزیزی
-                                    </h2>
-                                    <h5 class="col-12 justify-content-center" style="text-align: center;">
-                                        توسعه دهنده رابط کاربری
-                                    </h5>
-                                </div>
-                                <div id="team-slider-iteam-social" class="row col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12 d-lg-none justify-content-center align-self-center">
-                                    <button id="team-slider-iteam-social-1" class="btn btn-warning button-social">
-                                        <img class="icon-social" src="static/index/Dependencies/Images/social/telegram2.png">
-                                    </button>
-                                    <button id="team-slider-iteam-social-2" class="btn btn-warning button-social">
-                                        <img class="icon-social" src="static/index/Dependencies/Images/Teams/Logo/Instagram-logo.png">
-                                    </button>
-                                    <button id="team-slider-iteam-social-3" class="btn btn-warning button-social">
-                                        <img class="icon-social" src="static/index/Dependencies/Images/social/git4.png">
-                                    </button>
-                                    <button id="team-slider-iteam-social-4" class="btn btn-warning button-social"></button>
+                        <!--carousel-block-->
+                        {% for user in users %}
+                            <div class="carousel-item{% if forloop.counter == 1 %} active{% endif %}">
+                                <div class="row">
+                                    <div class="row col-xl-5 col-lg-5 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center align-self-center">
+                                        <div id="team-slider-iteam-social" class="row col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12 d-none d-lg-block justify-content-center align-self-center">
+                                            <button id="team-slider-iteam-social-1" class="btn btn-warning button-social">
+                                                <img class="icon-social" src="static/index/Dependencies/Images/social/telegram2.png">
+                                            </button>
+                                            <button id="team-slider-iteam-social-2" class="btn btn-warning button-social">
+                                                <img class="icon-social" src="static/index/Dependencies/Images/Teams/Logo/Instagram-logo.png">
+                                            </button>
+                                            <button id="team-slider-iteam-social-3" class="btn btn-warning button-social">
+                                                <img class="icon-social" src="static/index/Dependencies/Images/social/git4.png">
+                                            </button>
+                                            <button id="team-slider-iteam-social-4" class="btn btn-warning button-social"></button>
+                                        </div>
+                                        <div class="row col-xl-10 col-lg-10 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center align-self-center">
+                                            <img id="team-slider-item-user" class="justify-content-center" src={{user.img}}>
+                                            <h2 class="col-12 justify-content-center" class="justify-content-center" style="text-align: center;">
+                                                {{ user.name }}
+                                            </h2>
+                                            <h5 class="col-12 justify-content-center" style="text-align: center;">
+                                                {{user.description}}
+                                            </h5>
+                                        </div>
+                                        <div id="team-slider-iteam-social" class="row col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12 d-lg-none justify-content-center align-self-center">
+                                            <button id="team-slider-iteam-social-1" class="btn btn-warning button-social">
+                                                <img class="icon-social" src="static/index/Dependencies/Images/social/telegram2.png">
+                                            </button>
+                                            <button id="team-slider-iteam-social-2" class="btn btn-warning button-social">
+                                                <img class="icon-social" src="static/index/Dependencies/Images/Teams/Logo/Instagram-logo.png">
+                                            </button>
+                                            <button id="team-slider-iteam-social-3" class="btn btn-warning button-social">
+                                                <img class="icon-social" src="static/index/Dependencies/Images/social/git4.png">
+                                            </button>
+                                            <button id="team-slider-iteam-social-4" class="btn btn-warning button-social"></button>
+                                        </div>
+                                    </div>
+                                    <h1 id="team-slider-item-caption" class="col-xl-7 col-lg-7 d-none d-lg-block justify-content-center align-self-center">
+                                        {{user.theory}}
+                                    </h1>
                                 </div>
                             </div>
-                            <h1 id="team-slider-item-caption" class="col-xl-7 col-lg-7 d-none d-lg-block justify-content-center align-self-center">
-                                مهم ترین چیزی که در کودا دنبالشیم خلق یک تجربه جدید و بی نظیره...
-                            </h1>
-                        </div>
-                      </div>
+                        {% endfor %}
+                        <!--carousel-block-->
                     </div>
-                    <a class="carousel-control-prev" href="#team-slider" role="button" data-slide="prev" style="width: 20px; height: 20px; margin-top: 130px;">
+                    <a class="carousel-control-prev" href="#team-slider" role="button" data-slide="prev" style="width: 20px; height: 20px; margin-top: 130px; z-index: auto;">
                         <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: orangered; border-radius: 10px; margin-left: -50px; width: 20px; height: 20px;"></span>
                         <span class="sr-only">Previous</span>
                       </a>
@@ -450,21 +416,19 @@
                </div>
 
                <div id="contact" class="col-xl-6 col-lg-5 col-md-12 col-sm-12 col-xs-12 justify-content-center mx-auto">
-                    <div id="contact-row1" class="row justify-content-center col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img id="contact-row1-img" src="static/index/Dependencies/Images/social/call.png" style="width: 50px; height: 50px; margin-left: 15px;">
-                        <h5 id="contact-row1-h5" class="align-self-center" style="font-size: 21px; line-height: 40px; margin-top: 5px;">مشاوره و سفارش پروژه: <br> محمد حسین احمدی: 09910617140</h5>
+                    <div class="row justify-content-center col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <img src="static/index/Dependencies/Images/social/call.png" style="width: 50px; height: 50px; margin-left: 15px;">
+                        <h5 class="align-self-center" style="font-size: 21px; line-height: 40px; margin-top: 5px;">مشاوره و سفارش پروژه: <br> محمد حسین احمدی: 09910617140</h5>
                     </div>
-                    <div id="contact-row2" class="row justify-content-center col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img id="contact-row2-img" src="static/index/Dependencies/Images/social/chat.png" style="width: 50px; height: 50px; margin-left: 15px;">
-                        <h5 id="contact-row2-h5" class="align-self-center" style="font-size: 21px; line-height: 40px; margin-top: 5px;">انتقادات و پیشنهادات: <br> محمد امین عزیزی: 09333073175</h5>
+                    <div class="row justify-content-center col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <img src="static/index/Dependencies/Images/social/chat.png" style="width: 50px; height: 50px; margin-left: 15px;">
+                        <h5 class="align-self-center" style="font-size: 21px; line-height: 40px; margin-top: 5px;">انتقادات و پیشنهادات: <br> محمد امین عزیزی: 09333073175</h5>
                     </div>
-                    <div>
-                        <h5 id="contact-caption-h5">
-                            ما فعلا مکان ثابتی برای کارهامون نداریم. <br> 
-                            برای ارتباط با تیم، میتونید با مسئول ارتباط با
-                            <br> مشتری مون تماس بگیرید.
-                        </h5>
-                    </div>
+                    <h5 id="h6-contact" style="text-align: center; line-height: 30px; margin-top: 20px;">
+                        ما فعلا مکان ثابتی برای کارهامون نداریم. <br> 
+                        برای ارتباط با تیم، میتونید با مسئول ارتباط با
+                        <br> مشتری مون تماس بگیرید.
+                    </h5>
                     <h5 id="h5-social">کودا در شبکه های اجتماعی:</h5>
                     <div id="div-social" class="row justify-content-center">
                         <a href="#">

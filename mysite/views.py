@@ -5,8 +5,9 @@ from .forms import emailservice
 
 
 
-class contactpage(TemplateView):
+class contact_us(TemplateView):
     template_name = "contact.htm"
+
 class index(TemplateView):
     users = []
     posts = []
