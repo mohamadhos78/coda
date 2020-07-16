@@ -5,7 +5,7 @@
     <head>
         <!--Css-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">        
-        <link rel="stylesheet" href={% static "index/contact.css" %}> 
+        <link rel="stylesheet" href={% static "index/costs.css" %}> 
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">        
         <!--Css-->
 
@@ -14,7 +14,7 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-        <script src={% static "index/contact.js" %}></script> 
+        <script src={% static "index/costs.js" %}></script> 
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <!--JavaScript-->
 
@@ -266,16 +266,14 @@
                 <div class="col-xl-7 col-lg-8 col-md-10 col-sm-12 col-xs-12 justify-content-center">
                     <div id="header-title" class="row col-12 justify-content-center">
                         <h1 id="header-title-h1">
-                            صدای خونه تکونی میاد!
+                            پولِ کم تر، کیفیتِ بهتر
                         </h1>
                     </div>
                     <div id="header-caption" class="row col-12 justify-content-center">
                         <h3 id="header-caption-h3">
-                            کسب و کار چیزی نیست که بشه روش ریسک کرد. 
-                            کار رو باید به کاردون سپرد. 
-                            ما هم اینجاییم که بهترین تجربه کاری رو برات رقم بزنیم. 
-                            همینجا میتونی راه های ارتباطی مارو پیدا کنی.
-                            منتظر تماست هستیم :)
+                            هدف ما اینه که بتونیم در کنار ارائه بهترین و به روز ترین
+                            امکانات و استفاده از جدیدترین تکنولوژی ها در پیاده سازی 
+                            سفارشات شما، منصفانه ترین هزینه ممکن رو دریافت کنیم.
                         </h3>
                     </div>
                     <div id="header-sign" class="row col-12 justify-content-center">
@@ -295,155 +293,118 @@
             <div id="intro" class="row justify-content-center">
                 <div id="intro-title" class="row col-12 justify-content-center">
                     <h1 id="intro-title-h1">
-                        درباره تیم حرفه ای کودا:
+                        تعرفه تقریبی
                     </h1>
                 </div>
                 <div id="intro-caption" class="row col-9 justify-content-center">
                     <h3 id="intro-caption-h3">
-                        کم تر از یک ساله که دور هم جمع شدیم و یه تیم درست و حسابی رو تشکیل دادیم. 
-                        همه جور آدمی هم همراهمون هست. 
-                        از متخصص های درس خونده ی تراز اول دانشگاهی، 
-                        تا اون درست و حسابیای فنیِ بازاری، 
-                        تا اون فریلنسرای عجیب و غریب. 
-                        پس مطمئن باش که با یه تیم همه چیز تموم کار می کنی. 
-                        اما تو همین مدت کلی تجربه بدست آوردیم و مهارت. 
-                        روی هر پروژه ساعت ها زمان میذاریم، 
-                        از ایده یابی و ترسیم مسیر پیاده سازی، 
-                        تا طراحی اولیه و تنظیمات نهایی. 
-                        امروز میتونیم به شما اطمینان بدیم که بعد از همکاری با 
-                        ما بهترین حس کاری تون رو تجربه می کنید و 
-                        احتمالا به این که با یه تیم جوون و کاربلد و خلاق کار کردید 
-                        افتخار خواهید کرد! 
-                        این از ما. حالا نوبت شماست
+                        قطعا تعرفه طراحی سایت شما با توجه به امکاناتی که براش در نظر دارید
+                        متفاوت خواهد بود. ولی ما در یک نگاه کلی، سایت هارو به سه دسته کلی
+                        تقسیم می کنیم و بر همین اساس یک تعرفه تقریبی براشون در نظر می گیریم.
                     </h3> 
                 </div>
             </div>
             <!--intro-->
 
-            <!--team-->
-            <div id="team" class="row d-flex justify-content-center">
-                <h1 id="team-title" class="col-12 d-flex justify-content-center align-self-center">تیم ما</h1>
-                <div id="team-slider" class="col-10 justify-content-center carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <!--carousel-block-->
-                        {% for user in users %}
-                            <div class="carousel-item{% if forloop.counter == 1 %} active{% endif %}">
-                                <div class="row">
-                                    <div class="row col-xl-5 col-lg-5 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center align-self-center">
-                                        <div id="team-slider-iteam-social" class="row col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12 d-none d-lg-block justify-content-center align-self-center">
-                                            <button id="team-slider-iteam-social-1" class="btn btn-warning button-social">
-                                                <img class="icon-social" src={% static "index/Dependencies/Images/social/telegram2.png" %}>
-                                            </button>
-                                            <button id="team-slider-iteam-social-2" class="btn btn-warning button-social">
-                                                <img class="icon-social" src={% static "index/Dependencies/Images/Teams/Logo/Instagram-logo.png" %}>
-                                            </button>
-                                            <button id="team-slider-iteam-social-3" class="btn btn-warning button-social">
-                                                <img class="icon-social" src={% static "index/Dependencies/Images/social/git4.png" %}>
-                                            </button>
-                                            <button id="team-slider-iteam-social-4" class="btn btn-warning button-social"></button>
-                                        </div>
-                                        <div class="row col-xl-10 col-lg-10 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center align-self-center">
-                                            <img id="team-slider-item-user" class="justify-content-center" src={% static "index/Dependencies/Images/Teams/User.png" %}>
-                                            <h2 class="col-12 justify-content-center" class="justify-content-center" style="text-align: center;">
-                                                {{ user.name }}
-                                            </h2>
-                                            <h5 class="col-12 justify-content-center" style="text-align: center;">
-                                                {{user.description}}
-                                            </h5>
-                                        </div>
-                                        <div id="team-slider-iteam-social" class="row col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12 d-lg-none justify-content-center align-self-center">
-                                            <button id="team-slider-iteam-social-1" class="btn btn-warning button-social">
-                                                <img class="icon-social" src={% static "index/Dependencies/Images/social/telegram2.png" %}>
-                                            </button>
-                                            <button id="team-slider-iteam-social-2" class="btn btn-warning button-social">
-                                                <img class="icon-social" src={% static "index/Dependencies/Images/Teams/Logo/Instagram-logo.png" %}>
-                                            </button>
-                                            <button id="team-slider-iteam-social-3" class="btn btn-warning button-social">
-                                                <img class="icon-social" src={% static "index/Dependencies/Images/social/git4.png" %}>
-                                            </button>
-                                            <button id="team-slider-iteam-social-4" class="btn btn-warning button-social"></button>
-                                        </div>
-                                    </div>
-                                    <h1 id="team-slider-item-caption" class="col-xl-7 col-lg-7 d-none d-lg-block justify-content-center align-self-center">
-                                        {{user.theory}}
-                                    </h1>
-                                </div>
-                            </div>
-                        {% endfor %}
-                        <!--carousel-block-->
+            <!--acardeon-->
+            <div id="acardeon" class="row justify-content-center">
+                <div id="acardeon-buttons" class="row col-8 justify-content-start">
+                    <!--for large screens-->
+                    <button id="acardeon-buttons-1" onclick="acardeon1()" class="btn button-acardeon d-none d-lg-block">
+                        <h5 class="acardeon-font">
+                            شخصی یا شرکتی
+                        </h5>
+                    </button>
+                    <button id="acardeon-buttons-2" onclick="acardeon2()" class="btn button-acardeon d-none d-lg-block">
+                        <h5 class="acardeon-font">
+                            فروشگاهی یا خدماتی
+                        </h5>
+                    </button>
+                    <button id="acardeon-buttons-3" onclick="acardeon3()" class="btn button-acardeon d-none d-lg-block">
+                        <h5 class="acardeon-font">
+                            اختصاصی
+                        </h5>
+                    </button>
+                    <!--for large screens-->
+
+                    <!--for small screens-->
+                    <button id="acardeon-buttons-1" onclick="acardeon1()" class="btn button-acardeon1 d-lg-none">
+                        <h5 class="acardeon-font">
+                            شرکتی
+                        </h5>
+                    </button>
+                    <button id="acardeon-buttons-2" onclick="acardeon2()" class="btn button-acardeon1 d-lg-none">
+                        <h5 class="acardeon-font">
+                            خدماتی
+                        </h5>
+                    </button>
+                    <button id="acardeon-buttons-3" onclick="acardeon3()" class="btn button-acardeon1 d-lg-none">
+                        <h5 class="acardeon-font">
+                            اختصاصی
+                        </h5>
+                    </button>
+                    <!--for small screens--> 
+                </div>
+                <div id="acardeon-tabs" class="row col-8 justify-content-center">
+                    <div id="acardeon-tabs-main" class="row justify-content-center col-12 tabs-acardeon">
+                        <div id="text1" class="row col-11 justify-content-center" style="font-size: 23px; text-align: center; margin: 50px 20px 40px 20px;">
+                            <p style="font-size: 23px; text-align: center;">
+                                کمکت می کنیم خودتو به بهترین شکل ممکن معرفی کنی.
+                                می تونی یه رزومه آنلاین داشته باشی یا یه گالری شخصی. 
+                                در کنارش اگر شرکت یا کسب و کار شخصی ای داری که نیاز به تبلیغات داره،
+                                می تونی از محصولات این دسته استفاده کنی.
+                                در کنارش اگر شرکت یا کسب و کار شخصی ای داری که نیاز به تبلیغات داره،
+                                می تونی از محصولات این دسته استفاده کنی.
+                                کمکت می کنیم خودتو به بهترین شکل ممکن معرفی کنی.
+                                می تونی یه رزومه آنلاین داشته باشی یا یه گالری شخصی. 
+                                در کنارش اگر شرکت یا کسب و کار شخصی ای داری که نیاز به تبلیغات داره،
+                                می تونی از محصولات این دسته استفاده کنی.
+                            </p>
+                            <h4 style="font-size: 30px; text-align: center; margin-top: 30px;">
+                                هزینه تقریبی دو میلیون تومان
+                            </h4>
+                        </div>
+                        <div id="text2" class="row col-11 justify-content-center d-none" style="font-size: 23px; text-align: center; margin: 50px 20px 40px 20px;">
+                            <p style="font-size: 23px; text-align: center;">
+                                کمکت می کنیم خودتو به بهترین شکل ممکن معرفی کنی.
+                                می تونی یه رزومه آنلاین داشته باشی یا یه گالری شخصی. 
+                                در کنارش اگر شرکت یا کسب و کار شخصی ای داری که نیاز به تبلیغات داره،
+                                می تونی از محصولات این دسته استفاده کنی.
+                                کمکت می کنیم خودتو به بهترین شکل ممکن معرفی کنی.
+                                می تونی یه رزومه آنلاین داشته باشی یا یه گالری شخصی. 
+                                در کنارش اگر شرکت یا کسب و کار شخصی ای داری که نیاز به تبلیغات داره،
+                                می تونی از محصولات این دسته استفاده کنی.
+                                کمکت می کنیم خودتو به بهترین شکل ممکن معرفی کنی.
+                                می تونی یه رزومه آنلاین داشته باشی یا یه گالری شخصی. 
+                                در کنارش اگر شرکت یا کسب و کار شخصی ای داری که نیاز به تبلیغات داره،
+                                می تونی از محصولات این دسته استفاده کنی.
+                            </p>
+                            <h4 style="font-size: 30px; text-align: center; margin-top: 30px;">
+                                هزینه تقریبی پنج میلیون تومان
+                            </h4>
+                        </div>
+                        <div id="text3" class="row col-11 justify-content-center d-none" style="font-size: 23px; text-align: center; margin: 50px 20px 40px 20px;">
+                            <p style="font-size: 23px; text-align: center;">
+                                می تونی یه رزومه آنلاین داشته باشی یا یه گالری شخصی. 
+                                در کنارش اگر شرکت یا کسب و کار شخصی ای داری که نیاز به تبلیغات داره،
+                                می تونی از محصولات این دسته استفاده کنی.
+                                کمکت می کنیم خودتو به بهترین شکل ممکن معرفی کنی.
+                                می تونی یه رزومه آنلاین داشته باشی یا یه گالری شخصی. 
+                                در کنارش اگر شرکت یا کسب و کار شخصی ای داری که نیاز به تبلیغات داره،
+                                می تونی از محصولات این دسته استفاده کنی.
+                                کمکت می کنیم خودتو به بهترین شکل ممکن معرفی کنی.
+                                می تونی یه رزومه آنلاین داشته باشی یا یه گالری شخصی. 
+                                در کنارش اگر شرکت یا کسب و کار شخصی ای داری که نیاز به تبلیغات داره،
+                                می تونی از محصولات این دسته استفاده کنی.
+                            </p>
+                            <h4 style="font-size: 30px; text-align: center; margin-top: 30px;">
+                                هزینه تقریبی ده میلیون تومان
+                            </h4>
+                        </div>
                     </div>
-                    <a class="carousel-control-prev" href="#team-slider" role="button" data-slide="prev" style="width: 20px; height: 20px; margin-top: 130px; z-index: auto;">
-                        <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: orangered; border-radius: 10px; margin-left: -50px; width: 20px; height: 20px;"></span>
-                        <span class="sr-only">Previous</span>
-                      </a>
-                      <a class="carousel-control-next" href="#team-slider" role="button" data-slide="next" style="width: 20px; height: 20px; margin-top: 130px;">
-                        <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: orangered; border-radius: 10px; margin-right: -50px; width: 20px; height: 20px;"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
                 </div>
             </div>
-            <!--team-->
-
-            <!--form-->
-            <div id="form-contact" class="row justify-content-center" dir="rtl">
-                <h2 id="h3-title" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 justify-content-center">
-                    شروع ارتباط...
-                </h2>
-                <div id="div-form" class="col-xl-5 offset-xl-1 col-lg-5 offset-lg-1 col-md-10 offset-md-1 col-sm-10 offset-sm-1 col-xs-10 offset-xs-1 mx-auto">
-                    <form id="form">
-                        <div class="form-group">
-                            <label id="label-name" for="formGroupExampleInput"> نام شما:</label>
-                            <input id="input-name" type="text" class="form-control form-rounded input-height" id="formGroupExampleInput" placeholder="نام و نام خانوادگی">
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <label id="label-number" for="formGroupExampleInput"> شماره تماس:</label>
-                                <input id="input-number" type="number" class="form-control form-rounded input-height" placeholder="شماره تماس">
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <label id="label-email" for="formGroupExampleInput"> پست الکترونیکی:</label>
-                                <input id="input-email" type="email" class="form-control form-rounded input-height" placeholder="پست الکترونیکی">
-                            </div>
-                        </div>
-                        <div class="form-group" style="margin-top: 12px;">
-                            <label id="label-comment" for="comment">پیامتون:</label>
-                            <textarea title="comment" class="form-control form-rounded input-height" rows="8" id="comment"></textarea>
-                        </div>
-                        <p class="row justify-content-center">
-                            <input id="contact-form-button-input" type="submit" class="form-control btn btn-danger button-contact" value="ارسال">
-                        </p>
-                    </form>
-               </div>
-
-               <div id="contact" class="col-xl-6 col-lg-5 col-md-12 col-sm-12 col-xs-12 justify-content-center mx-auto">
-                    <div class="row justify-content-center col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src={% static "index/Dependencies/Images/social/call.png" %} style="width: 50px; height: 50px; margin-left: 15px;">
-                        <h5 class="align-self-center" style="font-size: 21px; line-height: 40px; margin-top: 5px;">مشاوره و سفارش پروژه: <br> محمد حسین احمدی: 09910617140</h5>
-                    </div>
-                    <div class="row justify-content-center col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src={% static "index/Dependencies/Images/social/chat.png" %} style="width: 50px; height: 50px; margin-left: 15px;">
-                        <h5 class="align-self-center" style="font-size: 21px; line-height: 40px; margin-top: 5px;">انتقادات و پیشنهادات: <br> محمد امین عزیزی: 09333073175</h5>
-                    </div>
-                    <h5 id="h6-contact" style="text-align: center; line-height: 30px; margin-top: 20px;">
-                        ما فعلا مکان ثابتی برای کارهامون نداریم. <br> 
-                        برای ارتباط با تیم، میتونید با مسئول ارتباط با
-                        <br> مشتری مون تماس بگیرید.
-                    </h5>
-                    <h5 id="h5-social">کودا در شبکه های اجتماعی:</h5>
-                    <div id="div-social" class="row justify-content-center">
-                        <a href="#">
-                            <img id="social-coda" src={% static "index/Dependencies/Images/social/telegram.png" %}>  
-                        </a> 
-                        <a href="#">
-                            <img id="social-coda" src={% static "index/Dependencies/Images/social/github.png" %}> 
-                        </a>
-                        <a href="#">
-                            <img id="social-coda" src={% static "index/Dependencies/Images/social/instagram.png" %}>
-                        </a>               
-                    </div>  
-                </div>     
-            </div>
-            <!--form-->
+            <!--acardeon-->
 
             <!--footer-->
             <div id="footer" class="row d-flex justify-content-center">

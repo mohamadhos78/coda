@@ -49,11 +49,11 @@ html{
 
 /**************** Header ****************/
 #header{
-    background-image: url('Dependencies/Images/Header/contact-header.png');
+    background-image: url('Dependencies/Images/Header/costs-header.png');
     background-repeat: no-repeat;
-    background-size: 1366px;
+    background-size: 1430px;
     margin-top: -75px;
-    z-index: 0;
+    z-index: 2;
     height: 770px;
 }
 
@@ -111,13 +111,13 @@ html{
 /**************** navbar ****************/
 #navbar{
     height: 70px;
-    z-index: 1;
+    z-index: 3;
     transition: ease-in-out 0.3s;
 }
 
 #navbar-scroll{
     height: 75px;
-    z-index: 2;
+    z-index: 3;
     transition: ease-in-out 0.3s;
     top: -70px;
     background-color: rgba(46, 46, 46, 0.835);
@@ -127,7 +127,7 @@ html{
 
 #navbar-right{
     color: white;
-    z-index: 1;
+    z-index: 2;
 }
 
 #navbar-right-row{
@@ -159,7 +159,7 @@ html{
 }
 
 #navbar-left{
-    z-index: 1;
+    z-index: 2;
 }
 
 #nevbar-left-row{
@@ -184,7 +184,7 @@ html{
 
 #navbar-left-sign{
     text-align: center;
-    z-index: 1;
+    z-index: 2;
 }
 
 #navbar-left-sign-button{
@@ -440,7 +440,7 @@ html{
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 2;
+    z-index: 3;
     top: 0;
     left: 0;
     border-radius: 0 20px 20px 0;
@@ -484,174 +484,6 @@ h6{
 }
 /*************** H's Right-Align ****************/
 
-/*************** form ****************/
-#h3-title{
-    text-align: center;
-    font-size: 35px;
-    font-weight: bold;
-}
-#div-form{
-    margin-top: 3em;
-}
-#form{
-    text-align: start;
-}
-#contact{
-    margin-top: 4em;
-}
-#label-name{
-    margin-right: 1em;
-}
-#label-number{
-    margin-right: 1em;
-}
-#label-email{
-    margin-right: 1em;
-}
-#label-comment{
-    margin-right: 1em;
-}
-#h5-social{
-    text-align: center;
-    margin-top: 2em;
-}
-#div-social{
-    margin-bottom: 1em;
-}
-
-input[type=text] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    outline: none;
-    animation: none;
-  }
-  input[type=text]:focus {
-    border: none;
-    animation: none;
-  }
-
-
-
-  input[type=number] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    outline: none;
-    animation: none;
-  }
-  input[type=number]:focus {
-    border: none;
-    animation: none;
-  }
-
-
-
-  input[type=email] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box; 
-  }
-  input[type=email]:focus {
-    border-radius: 25px;
-    outline: none;
-    transition: outline 0.6s linear;
-    border: none;
-  }
-
-textarea[title=comment]:focus{
-    border-radius: 25px;
-    outline: none;
-    transition: outline 0.6s linear;
-    border: none;
-}
-
-/*************** form ****************/
-
-.input-height{
-    height: 50px;
-    border-radius: 30px;
-    border-width: 1px;
-    border-color: #00E25A;
-    background-color: #00e25a11;
-}
-
-.button-contact{
-    width: 130px;
-    height: 50px;
-    border-radius: 40px;
-    background-color: #00E25A;
-    color: white;
-    border-width: 0;
-}
-
-
-
-
-
-/* team */
-#team{
-    background-color: rgba(0, 128, 0, 0.02);
-    margin-top: 100px;
-    margin-bottom: 100px;
-    padding: 50px 0 50px 0;
-}
-
-#team-title{
-    margin-bottom: 70px;
-    font-size: 35px;
-    font-weight: bold;
-}
-#team-slider-social{
-    padding: 0 5px 0 5px;
-}
-#team-slider{
-   
-}
-
-#team-slider-item-user{
-    width: 220px;
-    margin-bottom: 20px;
-}
-
-#team-slider-iteam-social{
-    z-index: 1;
-}
-
-#team-slider-item-caption{
-    background-image: url('Dependencies/Images/Teams/Qut.png');
-    background-repeat: no-repeat; 
-    background-position: left; 
-    background-size: 120%;
-    padding: 10% 0 10% 0;
-    text-align: center;
-    font-size: 35px;
-}
-
-.button-social{
-    width: 35px;
-    height: 35px;
-    border-radius: 25px;
-    margin: 0 5px 10px 5px;
-}
-.icon-social{
-    width: 35px;
-    height: 35px;
-    border-radius: 10px;
-    margin: -7px -13px 5px 5px;
-}
-#social-coda{
-    width: 50px;
-    height: 50px;
-    border-radius: 20px;
-    
-
-}
-/* team */
-
 /* footer */
 #footer-back{
     background-color: rgb(14, 14, 14);
@@ -677,11 +509,10 @@ textarea[title=comment]:focus{
     bottom: 0;
     left: 0;
     margin: auto;
-    
     width :34px;
     height: 55px;
-  }
-  .mousey {
+}
+.mousey {
     width: 3px;
     padding: 10px 15px;
     height: 35px;
@@ -689,8 +520,8 @@ textarea[title=comment]:focus{
     border-radius: 25px;
     opacity: 0.75;
     box-sizing: content-box;
-  }
-  .scroller {
+}
+.scroller {
     width: 3px;
     height: 10px;
     border-radius: 25%;
@@ -699,15 +530,15 @@ textarea[title=comment]:focus{
     animation-duration: 2.2s;
     animation-timing-function: cubic-bezier(.15,.41,.69,.94);
     animation-iteration-count: infinite;
-  }
-  @keyframes scroll {
+}
+@keyframes scroll {
     0% { opacity: 0; }
     10% { transform: translateY(0); opacity: 1; }
     100% { transform: translateY(15px); opacity: 0;}
-  }
-  /* scroll icon*/
+}
+/* scroll icon*/
 
-  /* social-bar */
+/* social-bar */
 #social-bar{
     width: 45px;
     height: 205px;
@@ -740,3 +571,62 @@ textarea[title=comment]:focus{
     opacity: 100%;
     transition: ease-in-out 0.3s;
 }
+/* social-bar */
+
+/* acardeon */
+#acardeon{
+    margin-top: 80px;
+}
+
+#acardeon-buttons-1{
+    background-color: seagreen;
+    z-index: 2;
+    box-shadow: -2px 0 5px 3px rgba(0, 0, 0, 0.157);
+}
+
+#acardeon-buttons-2{
+    background-color: tomato;
+    margin-right: -10px;
+    z-index: 1;
+    box-shadow: -2px 0 5px 3px rgba(0, 0, 0, 0.157);
+}
+
+#acardeon-buttons-3{
+    background-color: rgb(255, 179, 0);
+    margin-right: -10px;
+    z-index: 0;
+    box-shadow: -2px 0 5px 3px rgba(0, 0, 0, 0.157);
+}
+
+#acardeon-tabs-main{
+    background-color: rgba(46, 139, 86, 0.274);
+    border-color: seagreen;
+    transition: background-color 0.2s ease-in;
+}
+
+.tabs-acardeon{
+    border-radius: 50px 0 50px 50px;
+    border-width: 5;
+    border-style: solid;
+}
+
+.button-acardeon{
+    width: 160px;
+    height: 55px;
+    border-radius: 20px 15px 0 0;
+}
+
+.button-acardeon1{
+    width: 85px;
+    height: 55px;
+    border-radius: 20px 15px 0 0;
+}
+
+
+.acardeon-font{
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    margin-top: 10px;
+}
+/* acardeon */

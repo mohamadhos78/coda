@@ -5,7 +5,7 @@
     <head>
         <!--Css-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">        
-        <link rel="stylesheet" href="static/index/landing.css"> 
+        <link rel="stylesheet" href={% static "index/landing.css" %}> 
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">        
         <!--Css-->
 
@@ -14,7 +14,7 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-        <script src="static/index/landing.js"></script> 
+        <script src={% static "index/landing.js" %}></script> 
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <!--JavaScript-->
 
@@ -24,7 +24,7 @@
         <title>
             Coda | This is our website
         </title>
-        <link rel="shortcut icon" type="image/x-icon" href="static/index/favicon.ico" />
+        <link rel="shortcut icon" type="image/x-icon" href={% static "index/favicon.ico" %}/>
 
     </head>
 
@@ -39,16 +39,16 @@
         <!--social-bar-->
         <div id="social-bar" class="position-fixed">
             <a href="www.instagram.com/hicoda.ir">
-                <img id="social-bar-1" class="social-bar-icon" src="static/index/Dependencies/Images/social/instagram.png">
+                <img id="social-bar-1" class="social-bar-icon" src={% static "index/Dependencies/Images/social/instagram.png" %}>
             </a>
             <a href="www.telegram.com/hicoda.ir">
-                <img id="social-bar-2" class="social-bar-icon" src="static/index/Dependencies/Images/social/telegram.png">
+                <img id="social-bar-2" class="social-bar-icon" src={% static "index/Dependencies/Images/social/telegram.png" %}>
             </a>
             <a href="www.bale.com/hicoda.ir">
-                <img id="social-bar-3" class="social-bar-icon" src="static/index/Dependencies/Images/social/bale.png">
+                <img id="social-bar-3" class="social-bar-icon" src={% static "index/Dependencies/Images/social/bale.png" %}>
             </a>
             <a href="www.hithub.com/hicoda.ir">
-                <img id="social-bar-4" class="social-bar-icon" src="static/index/Dependencies/Images/social/github.png">
+                <img id="social-bar-4" class="social-bar-icon" src={% static "index/Dependencies/Images/social/github.png" %}>
             </a>
         </div>
         <!--social-bar-->
@@ -60,18 +60,18 @@
                     <div id="navbar-right-row" class="row d-flex justify-content-center">    
                         <div id="navbar-right-logo" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 d-flex justify-content-center align-self-center">
                             <a href="#">
-                                <img id="navbar-right-logo-img" src="static/index/Dependencies/Images/Logo/logo.png"/>
+                                <img id="navbar-right-logo-img" src={% static "index/Dependencies/Images/Logo/logo.png" %}>
                             </a>
                         </div>
                         <div id="navbar-right-blog" class="col-xl-2 col-lg-2 d-none d-lg-block justify-content-center align-self-end">
-                            <a href="static/index/blog.htm" style="text-decoration: none; color: white;">    
+                            <a href={% url "contact_us" %} style="text-decoration: none; color: white;">    
                                 <h6 id="navbar-right-blog-h6" class="text" type="button">
                                     بلاگ
                                 </h6>
                             </a>
                         </div>
                         <div id="navbar-right-contact" class="col-xl-2 col-lg-2 col-md-2 col-sm-2 d-none d-md-block justify-content-center align-self-end">
-                            <a href="{% url 'contact_us' %}" style="text-decoration: none; color: white;">
+                            <a href={% url "contact_us" %} style="text-decoration: none; color: white;">
                                 <h6 id="navbar-right-contact-h6" type="button">
                                     ارتباط
                                 </h6>
@@ -83,14 +83,14 @@
                 <div id="navbar-left" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-2 col-auto mr-auto"> 
                     <div id="nevbar-left-row" class="row d-flex justify-content-center">
                         <div id="navbar-left-cost" class="col-xl-2 col-lg-2 d-none d-lg-block justify-content-center align-self-end">
-                                <a href="static/index/costs.htm" style="text-decoration: none; color: black;">
+                                <a href={% url "contact_us" %} style="text-decoration: none; color: black;">
                                     <h6 id="navbar-left-cost-h6" type="button">
                                         تعرفه
                                     </h6>
                                 </a>
                         </div>
                         <div id="navbar-left-portfolio" class="col-xl-2 col-lg-2 col-md-3 d-none d-md-block justify-content-center align-self-end">
-                            <a href="static/index/portfolio.htm" style="text-decoration: none; color: black;">
+                            <a href={% url "contact_us" %} style="text-decoration: none; color: black;">
                                 <h6 id="navbar-left-portfolio-h6" type="button">
                                     پورتفولیو
                                 </h6>
@@ -101,11 +101,11 @@
                                 <h6 id="navbar-left-sign-button-h6">
                                     مشترک شو
                                 </h6>
-                                <img id="navbar-left-sign-button-img" src="static/index/Dependencies/Images/Navbar/person/Sign Icon.png"/>
+                                <img id="navbar-left-sign-button-img" src={% static "index/Dependencies/Images/Navbar/person/Sign Icon.png" %}>
                             </button>
                         </div>
                         <div id="navbar-left-hamburger" class="col-xl-1 col-lg-1 col-md-1 col-sm-2 col-xs-1 d-flex justify-content-center align-self-center">
-                            <img id="navbar-left-hamburger-img" type="button" onclick="openNav()" src="static/index/Dependencies/Images/Navbar/LeftMenuIcon.png"/>
+                            <img id="navbar-left-hamburger-img" type="button" onclick="openNav()" src={% static "index/Dependencies/Images/Navbar/LeftMenuIcon.png" %}>
                         </div>
                     </div>
                 </div>
@@ -118,18 +118,18 @@
                     <div id="navbar-right-row" class="row d-flex justify-content-center">    
                         <div id="navbar-right-logo" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 d-flex justify-content-center align-self-center">
                             <a href="#">
-                                <img id="navbar-right-logo-img" src="static/index/Dependencies/Images/Logo/logo.png"/>
+                                <img id={% url "contact_us" %} src={% static "index/Dependencies/Images/Logo/logo.png" %}>
                             </a>
                         </div>
                         <div id="navbar-right-blog" class="col-xl-2 col-lg-2 d-none d-lg-block justify-content-center align-self-end">
-                            <a href="static/index/blog.htm" style="text-decoration: none; color: black;">    
+                            <a href={% url "contact_us" %} style="text-decoration: none; color: black;">    
                                 <h6 id="navbar-right-blog-h6" class="text" type="button">
                                     بلاگ
                                 </h6>
                             </a>
                         </div>
                         <div id="navbar-right-contact" class="col-xl-2 col-lg-2 col-md-2 col-sm-2 d-none d-md-block justify-content-center align-self-end">
-                            <a href="static/index/contact.htm" style="text-decoration: none; color: black;">
+                            <a href={% url "contact_us" %} style="text-decoration: none; color: black;">
                                 <h6 id="navbar-right-contact-h6" type="button">
                                     ارتباط
                                 </h6>
@@ -141,14 +141,14 @@
                 <div id="navbar-left" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-2 col-auto mr-auto"> 
                     <div id="nevbar-left-row" class="row d-flex justify-content-center">
                         <div id="navbar-left-cost" class="col-xl-2 col-lg-2 d-none d-lg-block justify-content-center align-self-end">
-                                <a href="static/index/costs.htm" style="text-decoration: none; color: black;">
+                                <a href={% url "contact_us" %} style="text-decoration: none; color: black;">
                                     <h6 id="navbar-left-cost-h6" type="button">
                                         تعرفه
                                     </h6>
                                 </a>
                         </div>
                         <div id="navbar-left-portfolio" class="col-xl-2 col-lg-2 col-md-3 d-none d-md-block justify-content-center align-self-end">
-                            <a href="static/index/portfolio.htm" style="text-decoration: none; color: black;">
+                            <a href={% url "contact_us" %} style="text-decoration: none; color: black;">
                                 <h6 id="navbar-left-portfolio-h6" type="button">
                                     پورتفولیو
                                 </h6>
@@ -159,11 +159,11 @@
                                 <h6 id="navbar-left-sign-button-h6">
                                     مشترک شو
                                 </h6>
-                                <img id="navbar-left-sign-button-img" src="static/index/Dependencies/Images/Navbar/person/Sign Icon.png"/>
+                                <img id="navbar-left-sign-button-img" src={% static "index/Dependencies/Images/Navbar/person/Sign Icon.png" %}>
                             </button>
                         </div>
                         <div id="navbar-left-hamburger" class="col-xl-1 col-lg-1 col-md-1 col-sm-2 col-xs-1 d-flex justify-content-center align-self-center">
-                            <img id="navbar-left-hamburger-img" type="button" onclick="openNav()" src="static/index/Dependencies/Images/Navbar/LeftMenuIcon.png"/>
+                            <img id="navbar-left-hamburger-img" type="button" onclick="openNav()" src={% static "index/Dependencies/Images/Navbar/LeftMenuIcon.png" %}>
                         </div>
                     </div>
                 </div>
@@ -212,6 +212,7 @@
             <div id="navbar-modal-video" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                 <div class="modal-dialog d-flex justify-content-center" role="document">
                     <div id="navbar-modal-video-content" class="modal-content">
+                        <!--
                         <style>
                             .h_iframe-aparat_embed_frame{
                                 position:relative;
@@ -233,6 +234,7 @@
                             <span style="display: block; padding-top: 57%"></span>
                             <iframe src="https://www.aparat.com/video/video/embed/videohash/W9BNr/vt/frame" allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
                         </div>
+                        -->
                     </div>
                 </div>
             </div>
@@ -266,7 +268,7 @@
                         </form>
                     </div>-->
                     <div id="header-left-sign" class="row d-flex justify-content-center">
-                        <a href="static/index/costs.htm" style="text-decoration: none; color: black;">
+                        <a href={% url "contact_us" %} style="text-decoration: none; color: black;">
                             <button id="header-left-sign-button1" type="button" value="" class="btn btn-danger button-header">سفارش پروژه جدید</button>
                         </a>
                         <button id="header-left-sign-button2" type="button" class="btn btn-primary" data-toggle="modal" data-target="#navbar-modal-video" style="width: 60px; height: 60px; border-radius: 50px; margin: 5px;"></button>
@@ -293,7 +295,7 @@
                         </form>
                     </div>-->
                     <div id="header-left-sign_" class="row d-flex justify-content-center">
-                        <a href="static/index/Costs.htm" style="text-decoration: none; color: black;">
+                        <a href={% url "contact_us" %} style="text-decoration: none; color: black;">
                             <button id="header-left-sign-button1_" type="button" value="" class="btn btn-danger button-header">سفارش پروژه جدید</button>
                         </a>
                         <button id="header-left-sign-button2" type="button" value="" class="btn btn-primary" data-toggle="modal" data-target="#navbar-modal-video"></button>
@@ -313,7 +315,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <div id="side-nav-logo" class="col-12 d-flex justify-content-center align-self-center">
-                    <img id="side-nav-logo-img" src="static/index/Dependencies/Images/Logo/logo.png"/>
+                    <img id="side-nav-logo-img" src={% static "index/Dependencies/Images/Logo/logo.png" %}>
                 </div>
                 <!--for large screens-->
                 <div id="side-nav-1" class="row d-none d-lg-block justify-content-center">
@@ -337,16 +339,16 @@
 
                 <!--for small screens-->
                 <div id="side-nav-2" class="row d-lg-none d-flex justify-content-center">
-                    <a href="static/index/Blog.htm" style="text-decoration: none; color: black;">
+                    <a href={% url "contact_us" %} style="text-decoration: none; color: black;">
                         <button id="side-nav-1-social-button1" class="btn nav-item">بلاگ</button>
                     </a>
-                    <a href="static/index/contact.htm" style="text-decoration: none; color: black;">
+                    <a href={% url "contact_us" %} style="text-decoration: none; color: black;">
                         <button id="side-nav-1-social-button1" class="btn nav-item">مرتبط شیم</button>
                     </a>
-                    <a href="static/index/Costs.htm" style="text-decoration: none; color: black;">
+                    <a href={% url "contact_us" %} style="text-decoration: none; color: black;">
                         <button id="side-nav-1-social-button1" class="btn nav-item">تعرفه</button>
                     </a>
-                    <a href="static/index/Portfolio.htm" style="text-decoration: none; color: black;">
+                    <a href={% url "contact_us" %} style="text-decoration: none; color: black;">
                         <button id="side-nav-1-social-button1" class="btn nav-item">پورتفولیو</button>
                     </a>
                 </div>
@@ -400,7 +402,7 @@
                     <div id="blog-slider-post" class="carousel-inner">
                         {% for post in posts%}
                             <div id="slider-post-1" class="carousel-item{% if forloop.counter == 1 %} active{% endif %}" >
-                                <img id="slider-post-1-img" class="d-block w-100" src={{post.cover}} alt="First slide">
+                                <img id="slider-post-1-img" class="d-block w-100" src="https://vistapointe.net/images/background-1.jpg" alt="First slide">
                                 <h2 class="title-pos d-none d-md-block">
                                     {{post.title}}
                                 </h2>
@@ -435,18 +437,18 @@
                                     <div class="row col-xl-5 col-lg-5 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center align-self-center">
                                         <div id="team-slider-iteam-social" class="row col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12 d-none d-lg-block justify-content-center align-self-center">
                                             <button id="team-slider-iteam-social-1" class="btn btn-warning button-social">
-                                                <img class="icon-social" src="static/index/Dependencies/Images/social/telegram2.png">
+                                                <img class="icon-social" src={% static "index/Dependencies/Images/social/telegram2.png" %}>
                                             </button>
                                             <button id="team-slider-iteam-social-2" class="btn btn-warning button-social">
-                                                <img class="icon-social" src="static/index/Dependencies/Images/Teams/Logo/Instagram-logo.png">
+                                                <img class="icon-social" src={% static "index/Dependencies/Images/Teams/Logo/Instagram-logo.png" %}>
                                             </button>
                                             <button id="team-slider-iteam-social-3" class="btn btn-warning button-social">
-                                                <img class="icon-social" src="static/index/Dependencies/Images/social/git4.png">
+                                                <img class="icon-social" src={% static "index/Dependencies/Images/social/git4.png" %}>
                                             </button>
                                             <button id="team-slider-iteam-social-4" class="btn btn-warning button-social"></button>
                                         </div>
                                         <div class="row col-xl-10 col-lg-10 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center align-self-center">
-                                            <img id="team-slider-item-user" class="justify-content-center" src={{user.img}}>
+                                            <img id="team-slider-item-user" class="justify-content-center" src={% static "index/Dependencies/Images/Teams/User.png" %}>
                                             <h2 class="col-12 justify-content-center" class="justify-content-center" style="text-align: center;">
                                                 {{ user.name }}
                                             </h2>
@@ -456,13 +458,13 @@
                                         </div>
                                         <div id="team-slider-iteam-social" class="row col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12 d-lg-none justify-content-center align-self-center">
                                             <button id="team-slider-iteam-social-1" class="btn btn-warning button-social">
-                                                <img class="icon-social" src="static/index/Dependencies/Images/social/telegram2.png">
+                                                <img class="icon-social" src={% static "index/Dependencies/Images/social/telegram2.png" %}>
                                             </button>
                                             <button id="team-slider-iteam-social-2" class="btn btn-warning button-social">
-                                                <img class="icon-social" src="static/index/Dependencies/Images/Teams/Logo/Instagram-logo.png">
+                                                <img class="icon-social" src={% static "index/Dependencies/Images/Teams/Logo/Instagram-logo.png" %}>
                                             </button>
                                             <button id="team-slider-iteam-social-3" class="btn btn-warning button-social">
-                                                <img class="icon-social" src="static/index/Dependencies/Images/social/git4.png">
+                                                <img class="icon-social" src={% static "index/Dependencies/Images/social/git4.png" %}>
                                             </button>
                                             <button id="team-slider-iteam-social-4" class="btn btn-warning button-social"></button>
                                         </div>
