@@ -6,7 +6,10 @@ from .forms import emailservice
 
 
 class contact_us(TemplateView):
-    template_name = "contact.htm"
+    def get(self, request, **kwargs):
+        context ={
+        }
+        return render(request,"contact.htm", context)
 
 class index(TemplateView):
     users = []
@@ -63,34 +66,8 @@ class index(TemplateView):
         }
         return render(request,"index.htm", context)
 
-def signup(request):
-    member_skill = Skill.objects.all()
-    skills=[]
-    for skill in member_skill:
-        skills.append({
-                'skill_objects' :skill.title ,
-        })
-    if request.method == "POST":
-        filled_form = emailservice(request.POST)
-        if filled_form.is_valid():
-            filled_form.save()
-            note =" Dear {} you subscribed successfully".format(filled_form.cleaned_data['name'] )
-        else:
-            note = "sorry you didn't registered"
-        form = emailservice()
+class costs(TemplateView):
+    def get(self, request, **kwargs):
         context = {
-            'form' : form  ,
-            'note' : note  ,
-            'skills':skills,
         }
-        return render(request , 'Form.htm'  ,context)
-    else:
-        # member_skill = Skill.objects.all()
-        # skills=[]
-        # for skill in member_skill:
-        #     skills.append({
-        #         'skill_objects' :skill.title ,
-        #     })
-        form = emailservice()
-        note = 'welcome to signup page '
-        return render(request , 'Form.htm' , {'form': form , 'note':note ,'skills':skills})
+        return render(request , 'costs.htm' , context)
