@@ -71,7 +71,7 @@ class costs(TemplateView):
         context = {
         }
         return render(request , 'costs.htm' , context)
-classportfolio(TemplateView):
+class portfolio(TemplateView):
     def get(self, request, **kwargs):
         context ={
         }
