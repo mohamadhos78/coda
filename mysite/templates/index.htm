@@ -184,10 +184,11 @@
                             </h3>
                         </div>
                         <div id="navbar-modal-sign" class="row d-flex justify-content-center">
-                            <form id="navbar-modal-form" class="row d-flex justify-content-center">                                                 
-                                <input id="navbar-modal-form-input1" type="text" placeholder=" نام و نام خانوادگی " class="form-control" required>
-                                <input id="navbar-modal-form-input2" type="number" placeholder="شماره تماس" class="form-control" required>
-                                <input id="navbar-modal-form-input3" type="email" placeholder="پست الکترونیکی" class="form-control" required>
+                            <form id="navbar-modal-form" method="POST" action="{% url "index" %}" class="row d-flex justify-content-center">                                                 
+                                {% csrf_token %}
+                                <input id="navbar-modal-form-input1" type="text" name="name" placeholder=" نام و نام خانوادگی " class="form-control" required>
+                                <input id="navbar-modal-form-input2" type="number" name="family" placeholder="شماره تماس" class="form-control" required>
+                                <input id="navbar-modal-form-input3" type="email" name="email" placeholder="پست الکترونیکی" class="form-control" required>
                                 <input id="navbar-modal-form-button" type="submit" class="btn btn-secondary btn-light button" value="">
                             </form>
                         </div>
