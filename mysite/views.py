@@ -6,11 +6,20 @@ from .forms import emailservice
 
 
 class contact_us(TemplateView):
+    users = []
+    user_query = UserProfile.objects.all()
+    for a in user_query:
+        users.append({
+        'name':a.user.first_name+' '+a.user.last_name ,
+        'img':a.avatar.url ,
+        'description':a.description , 
+        'theory':a.theory ,
+        })
     def get(self, request, **kwargs):
         context ={
+            'users':self.users ,
         }
         return render(request,"contact.htm", context)
-
 class index(TemplateView):
     users = []
     posts = []
