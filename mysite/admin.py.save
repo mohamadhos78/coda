@@ -7,6 +7,12 @@ class ArticleAdmin(admin.ModelAdmin):
 
 admin.site.register(Article , ArticleAdmin)
 
+class UserProfileAdmin(admin.ModelAdmin):
+    list_display = ['user' , 'avatar']
+
+
+admin.site.register(UserProfile , UserProfileAdmin)
+
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['title' , 'cover']
 
@@ -23,7 +29,8 @@ class contact_usAdmin(admin.ModelAdmin):
 
 admin.site.register(contact_us , contact_usAdmin)
 
-admin.site.register(social_media)
 class adminProfileAdmin(admin.ModelAdmin):
     list_display = ['user' , 'avatar']
-admin.site.register(adminProfile , adminProfileAdmin)
+admin.site.register(UserProfile , adminProfileAdmin)
+
+

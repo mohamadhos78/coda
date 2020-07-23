@@ -12,13 +12,24 @@ def validate_file_extension(value):
     if not ext.lower() in valid_extensions:
         raise ValidationError('Unsupported file extension.')
 
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    avatar = models.FileField(upload_to='user_avatar/', null=False, blank=False, validators=[validate_file_extension])
+    description = models.CharField(max_length=512, null=False, blank=False)
+    theory  = models.CharField(max_length=512, null=True, blank=True)
+
+    def __str__(self):
+        return self.user.first_name + " " + self.user.last_name
+
+
 class Article(models.Model):
     title = models.CharField(max_length=128, null=False, blank=False)
     cover = models.FileField(upload_to='article_cover/', null=False, blank=False, validators=[validate_file_extension])
     content = RichTextField()
     created_at = models.DateTimeField(auto_now = True)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
-    author = models.ForeignKey('adminProfile', on_delete=models.CASCADE)
+    author = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     promote = models.BooleanField(default=False)
     
     def __str__(self):
@@ -49,9 +60,8 @@ class contact_us(models.Model):
 
     def __str__(self):
         return self.name
-
 class adminProfile(models.Model):
-    social_media = models.OneToOneField('social_media', on_delete=models.CASCADE)
+    user = models.OneToOneField('social_media', on_delete=models.CASCADE)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     avatar = models.FileField(upload_to='user_avatar/', null=False, blank=False, validators=[validate_file_extension])
     description = models.CharField(max_length=512, null=False, blank=False)
@@ -59,6 +69,9 @@ class adminProfile(models.Model):
 
     def __str__(self):
         return self.user.first_name + " " + self.user.last_name
+
+
+
 class social_media(models.Model):
     github    = models.URLField(max_length= 512 ,null=True,blank=True)
     linkedin  = models.URLField(max_length= 512 ,null=True,blank=True)
@@ -67,10 +80,4 @@ class social_media(models.Model):
     twitter   = models.URLField(max_length= 512 ,null=True,blank=True)
     bale      = models.URLField(max_length= 512 ,null=True,blank=True)
     def __str__(self):
-        return  self.github
-class main(models.Model):
-    logo = models.FileField(upload_to='main/',null=False,blank=False)
-    field1= models.CharField(max_length = 64,null=False ,blank=False)
-    field2= models.CharField(max_length = 64,null=False ,blank=False)
-    field3= models.CharField(max_length = 64,null=False ,blank=False)
-    field4= models.CharField(max_length = 64,null=False ,blank=False)
+        return self.user

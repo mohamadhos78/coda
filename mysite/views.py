@@ -7,7 +7,7 @@ from .forms import emailservice
 
 class contact_us(TemplateView):
     users = []
-    user_query = UserProfile.objects.all()
+    user_query = adminProfile.objects.all()
     for a in user_query:
         users.append({
         'name':a.user.first_name+' '+a.user.last_name ,
@@ -23,7 +23,7 @@ class contact_us(TemplateView):
 class index(TemplateView):
     users = []
     posts = []
-    user_query = UserProfile.objects.all()
+    user_query = adminProfile.objects.all()
     post_query = Article.objects.filter(promote=True)
     for a in user_query:
         users.append({
@@ -31,6 +31,12 @@ class index(TemplateView):
         'img':a.avatar.url ,
         'description':a.description , 
         'theory':a.theory ,
+        'github':a.social_media.github ,
+        'linkedin':a.social_media.linkedin ,
+        'twitter':a.social_media.twitter ,
+        'telegram':a.social_media.telegram ,
+        'bale':a.social_media.bale ,
+        'instagram':a.social_media.instagram ,
         })
     for b in post_query:
         posts.append({
