@@ -4,9 +4,18 @@ from .models import *
 from .forms import emailservice
 
 
-
 class contact_us(TemplateView):
     users = []
+    mains = []
+    main_query = main.objects.all()
+    for c in main_query:
+        mains.append({
+            'logo':c.logo ,
+            'field1':c.field1 ,
+            'field2':c.field2 ,
+            'field3':c.field3 ,
+            'field4':c.field4 ,
+        })
     user_query = adminProfile.objects.all()
     for a in user_query:
         users.append({
@@ -18,13 +27,24 @@ class contact_us(TemplateView):
     def get(self, request, **kwargs):
         context ={
             'users':self.users ,
+            'main':self.mains ,
         }
         return render(request,"contact.htm", context)
 class index(TemplateView):
+    mains = []
     users = []
     posts = []
     user_query = adminProfile.objects.all()
     post_query = Article.objects.filter(promote=True)
+    main_query = main.objects.all()
+    for c in main_query:
+        mains.append({
+            'logo':c.logo ,
+            'field1':c.field1 ,
+            'field2':c.field2 ,
+            'field3':c.field3 ,
+            'field4':c.field4 ,
+        })
     for a in user_query:
         users.append({
         'name':a.user.first_name+' '+a.user.last_name ,
@@ -46,25 +66,15 @@ class index(TemplateView):
         'category':b.category,
         'title':b.title ,
         })     
-    def get(self, request, **kwargs):
-        if request.method == "POST":
-            filled_form = emailservice(request.POST)
-            if filled_form.is_valid():
-                filled_form.save()
-            else:
-                form = emailservice()
-            context = {
-                'form' : form  ,
-            }
-            return render(request , 'index.htm'  ,context)
-        else:   
-            form = emailservice()
-            context ={
-                'users':self.users ,
-                'posts':self.posts ,
-                'form': form ,
-            }
-            return render(request,"index.htm", context)
+    def get(self, request, **kwargs):  
+        form = emailservice()
+        context ={
+            'users':self.users ,
+            'posts':self.posts ,
+            'main':self.mains ,
+            'form': form ,
+        }
+        return render(request,"index.htm", context)
 
     def post(self, request, **kwargs):
         form = emailservice()
@@ -77,17 +87,41 @@ class index(TemplateView):
         context ={
             'users':self.users ,
             'posts':self.posts ,
+            'main':self.mains ,
             'form': form
         }
         return render(request,"index.htm", context)
 
 class costs(TemplateView):
     def get(self, request, **kwargs):
+        mains = []
+        main_query = main.objects.all()
+        for c in main_query:
+            mains.append({
+                'logo':c.logo ,
+                'field1':c.field1 ,
+                'field2':c.field2 ,
+                'field3':c.field3 ,
+                'field4':c.field4 ,
+            })
         context = {
-        }
+            'main':self.mains ,
+        }        
         return render(request , 'costs.htm' , context)
 class portfolio(TemplateView):
     def get(self, request, **kwargs):
+        mains = []
+        main_query = main.objects.all()
+        for c in main_query:
+            mains.append({
+                'logo':c.logo ,
+                'field1':c.field1 ,
+                'field2':c.field2 ,
+                'field3':c.field3 ,
+                'field4':c.field4 ,
+            })
         context ={
+            'main':self.mains ,
         }
         return render(request,"portfolio.htm", context)
+

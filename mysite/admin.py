@@ -27,3 +27,5 @@ admin.site.register(social_media)
 class adminProfileAdmin(admin.ModelAdmin):
     list_display = ['user' , 'avatar']
 admin.site.register(adminProfile , adminProfileAdmin)
+
+admin.site.register(main)
