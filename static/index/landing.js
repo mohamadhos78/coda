@@ -1,9 +1,9 @@
 /**************** hamburger-menu ****************/
 function openNav() {
-    document.getElementById("side-nav").style.width = "350px";
+    document.getElementById("side-nav").style.width = "270px";
     document.getElementById("Main").style.marginLeft = "50px";
-    document.getElementById("side-nav").style.backgroundColor = "rgb(255, 233, 233, 0.5)";
-    document.getElementById("header").style.opacity = "80%";
+    document.getElementById("side-nav").style.backgroundColor = "rgb(255, 255, 255, 0.5)";
+    document.getElementById("header").style.opacity = "70%";
   }
   
   function closeNav() {
