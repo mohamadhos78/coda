@@ -20,8 +20,8 @@
 
 /****************** Main ******************/
 #Main{
-    transition: background-color .5s;
-    transition: margin-left .5s;
+    transition: background-color 0.5s;
+    transition: margin-left 0.5s;
 }
 
 #main{
@@ -29,7 +29,7 @@
     background-image: url('Dependencies/Images/Back/Landing\ -\ 768.png');
     background-repeat: no-repeat;
     background-size: 100%;
-    transition: opacity .5s;
+    transition: opacity 0.5s;
     opacity: 0;
 }
 
@@ -45,7 +45,7 @@
 
 /**************** Header1 ****************/
 #header{
-    transition: 0.5s;
+    transition: 0.3s;
     z-index: 0;
 }
 
@@ -502,8 +502,8 @@
 }
 
 #side-nav-1-caption{
-    margin: 5px 55px 0 20px;
-    line-height: 22px;
+    margin: 15px 40px 0 20px;
+    line-height: 23px;
 }
 
 #side-nav-1-social{
@@ -512,6 +512,12 @@
 
 #side-nav-2{
     margin: 40px 15px 0 15px;
+}
+
+.icon-social{
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
 }
 
 .social-icon{
@@ -532,13 +538,11 @@
 }
 
 .nav-item{
-    width: 120px;
+    width: 270px;
     height: 60px;
-    background-color: rgba(255, 68, 0, 0.226);
+    background-color: none;
     border-width: 1px;
-    border-color: orangered;
-    margin: 10px;
-    border-radius: 20px;
+    border-color: rgb(245, 245, 245);
     transition: 0.4s ease;
     color: black;
     
@@ -557,15 +561,16 @@
     position: fixed;
     top: 0;
     left: 0;
-    border-radius: 0 20px 20px 0;
+    border-radius: 0 0px 0px 0;
+    background-color: white;
     border-color: rgba(255, 68, 0, 0.198);
     border-style: solid;
     border-width: 0px 2px 0px 0;
     overflow-x: hidden;
-    transition: 0.5s;
+    transition: 0.3s;
     padding-top: 60px;
-    backdrop-filter: blur(5px);
-  }
+    backdrop-filter: blur(10px);
+}
 
 #side-nav-logo-img{
     width: 88px;
