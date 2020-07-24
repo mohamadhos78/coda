@@ -66,8 +66,7 @@ class social_media(models.Model):
     instagram = models.URLField(max_length= 512 ,null=True,blank=True)
     twitter   = models.URLField(max_length= 512 ,null=True,blank=True)
     bale      = models.URLField(max_length= 512 ,null=True,blank=True)
-    def __str__(self):
-        return  self.github
+    
 class main(models.Model):
     logo = models.FileField(upload_to='main/',null=False,blank=False)
     field1= models.CharField(max_length = 64,null=False ,blank=False)
