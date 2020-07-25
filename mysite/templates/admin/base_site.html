@@ -1,0 +1,12 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+{% block branding %}
+    <h1 id = "head">
+        <img src={% static 'index/Dependencies/Images/Logo/logo.png' %} alt="This is coda"
+        class="brand_img">
+    </h1>
+{% endblock branding %}
+{% block extrastyle %}
+    <link href={% static "admin/css/admin.css" %} rel="stylesheet">
+{% endblock extrastyle %}
