@@ -1,5 +1,5 @@
 from django import forms
-from .models import emailservicemodel , contact_us
+from .models import emailservicemodel , contact_us ,centure
 
 class emailservice(forms.ModelForm):
     class Meta:
@@ -15,4 +15,14 @@ class contact_us_form(forms.ModelForm):
             'phone' : 'phone',  
             'email' :'email' ,
             'text':'text'    ,
+            }
+class centure_form(forms.ModelForm):
+    class Meta:
+        model = centure
+        fields =['centure_name','centure_phone','centure_email','centure_description']
+        labels = { 
+            'centure_name' :'centure_name'   ,
+            'centure_phone' : 'centure_phone',  
+            'centure_email' :'centure_email' ,
+            'centure_description':'centure_description',
             }

@@ -1,21 +1,11 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from .models import *
-from .forms import emailservice
+from .forms import emailservice ,centure_form
 
 
 class contact_us(TemplateView):
     users = []
-    mains = []
-    main_query = main.objects.all()
-    for c in main_query:
-        mains.append({
-            'logo':c.logo.url ,
-            'field1':c.field1 ,
-            'field2':c.field2 ,
-            'field3':c.field3 ,
-            'field4':c.field4 ,
-        })
     user_query = adminProfile.objects.all()
     for a in user_query:
         users.append({
@@ -24,12 +14,30 @@ class contact_us(TemplateView):
         'description':a.description , 
         'theory':a.theory ,
         })
+    centure_form = centure_form()
+    form = emailservice()
     def get(self, request, **kwargs):
         context ={
             'users':self.users ,
-            'main':self.mains ,
+            # 'mains':self.mains ,
+            'centure':self.centure_form ,
+            'form':self.form ,
         }
         return render(request,"contact.htm", context)
+    def post(self, request, **kwargs):
+        centure_filled_form = centure_form(request.POST)
+        filled_form = emailservice(request.POST)
+        if filled_form.is_valid():
+            filled_form.save()
+        if centure_filled_form.is_valid():
+            centure_filled_form.save()
+        context ={
+            'users':self.users ,
+            #'main':self.mains ,
+            'form': self.form ,
+            'centure_form':self.centure_form ,
+        }
+        return render(request,"index.htm", context)
 class index(TemplateView):
     mains = []
     users = []

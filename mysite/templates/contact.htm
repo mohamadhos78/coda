@@ -61,7 +61,7 @@
                 <div id="navbar-right" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-4 col-auto ml-auto">
                     <div id="navbar-right-row" class="row d-flex justify-content-center">    
                         <div id="navbar-right-logo" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 d-flex justify-content-center align-self-center">
-                            <a href={% url "index" %}>
+                            <a href="#">
                                 <img id="navbar-right-logo-img" src={% static "index/Dependencies/Images/Logo/logo.png" %}>
                             </a>
                         </div>
@@ -143,14 +143,14 @@
                 <div id="navbar-left" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-2 col-auto mr-auto"> 
                     <div id="nevbar-left-row" class="row d-flex justify-content-center">
                         <div id="navbar-left-cost" class="col-xl-2 col-lg-2 d-none d-lg-block justify-content-center align-self-center">
-                                <a href={% url "costs" %} style="text-decoration: none; color: white;">
+                                <a href={% url "contact_us" %} style="text-decoration: none; color: white;">
                                     <h6 id="navbar-left-cost-h6" type="button">
                                         تعرفه
                                     </h6>
                                 </a>
                         </div>
                         <div id="navbar-left-portfolio" class="col-xl-2 col-lg-2 col-md-3 d-none d-md-block justify-content-center align-self-center">
-                            <a href={% url "portfolio" %} style="text-decoration: none; color: white;">
+                            <a href={% url "contact_us" %} style="text-decoration: none; color: white;">
                                 <h6 id="navbar-left-portfolio-h6" type="button">
                                     پورتفولیو
                                 </h6>
@@ -188,10 +188,11 @@
                                 </h3>
                             </div>
                             <div id="navbar-modal-sign" class="row d-flex justify-content-center">
-                                <form id="navbar-modal-form" class="row d-flex justify-content-center">                                                 
-                                    <input id="navbar-modal-form-input1" type="text" placeholder=" نام و نام خانوادگی " class="form-control" required>
-                                    <input id="navbar-modal-form-input2" type="number" placeholder="شماره تماس" class="form-control" required>
-                                    <input id="navbar-modal-form-input3" type="email" placeholder="پست الکترونیکی" class="form-control" required>
+                                <form id="navbar-modal-form" class="row d-flex justify-content-center" action={% url "contact_us" %} method="POST"%}>
+                                {% csrf_token %}                                                
+                                    <input id="navbar-modal-form-input1"name="name" type="text" placeholder=" نام و نام خانوادگی " class="form-control" required>
+                                    <input id="navbar-modal-form-input2"name="family" type="tel" placeholder="شماره تماس" class="form-control" required>
+                                    <input id="navbar-modal-form-input3"name="email" type="email" placeholder="پست الکترونیکی" class="form-control" required>
                                     <input id="navbar-modal-form-button" type="submit" class="btn btn-secondary btn-light button1" value="">
                                 </form>
                             </div>
@@ -390,24 +391,25 @@
                     شروع ارتباط...
                 </h2>
                 <div id="div-form" class="col-xl-5 offset-xl-1 col-lg-5 offset-lg-1 col-md-10 offset-md-1 col-sm-10 offset-sm-1 col-xs-10 offset-xs-1 mx-auto">
-                    <form id="form">
+                    <form id="form" action={% url "contact_us" %} method="POST">
+                    {% csrf_token %}
                         <div class="form-group">
                             <label id="label-name" for="formGroupExampleInput"> نام شما:</label>
-                            <input id="input-name" type="text" class="form-control form-rounded input-height" id="formGroupExampleInput" placeholder="نام و نام خانوادگی">
+                            <input id="input-name" type="text" name = "centure_name" class="form-control form-rounded input-height" id="formGroupExampleInput" placeholder="نام و نام خانوادگی">
                         </div>
                         <div class="row">
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <label id="label-number" for="formGroupExampleInput"> شماره تماس:</label>
-                                <input id="input-number" type="number" class="form-control form-rounded input-height" placeholder="شماره تماس">
+                                <input id="input-number" type="tel" name="centure_phone" class="form-control form-rounded input-height" placeholder="شماره تماس">
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <label id="label-email" for="formGroupExampleInput"> پست الکترونیکی:</label>
-                                <input id="input-email" type="email" class="form-control form-rounded input-height" placeholder="پست الکترونیکی">
+                                <input id="input-email" type="email" name="centure_email" class="form-control form-rounded input-height" placeholder="پست الکترونیکی">
                             </div>
                         </div>
                         <div class="form-group" style="margin-top: 12px;">
                             <label id="label-comment" for="comment">پیامتون:</label>
-                            <textarea title="comment" class="form-control form-rounded input-height" rows="8" id="comment"></textarea>
+                            <textarea title="comment" name="centure_description" class="form-control form-rounded input-height" rows="8" id="comment"></textarea>
                         </div>
                         <p class="row justify-content-center">
                             <input id="contact-form-button-input" type="submit" class="form-control btn btn-danger button-contact" value="ارسال">
@@ -464,3 +466,4 @@
     </script>
 
 </html>
+

@@ -29,3 +29,5 @@ class adminProfileAdmin(admin.ModelAdmin):
 admin.site.register(adminProfile , adminProfileAdmin)
 
 admin.site.register(main)
+
+admin.site.register(centure)
