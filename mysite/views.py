@@ -79,7 +79,7 @@ class index(TemplateView):
         context ={
             'users':self.users ,
             'posts':self.posts ,
-            'main':self.mains ,
+            'main':self.mains[0] ,
             'form': form ,
         }
         return render(request,"index.htm", context)
@@ -95,7 +95,7 @@ class index(TemplateView):
         context ={
             'users':self.users ,
             'posts':self.posts ,
-            'main':self.mains ,
+            'main':self.mains[0] ,
             'form': form
         }
         return render(request,"index.htm", context)
