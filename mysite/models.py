@@ -69,10 +69,14 @@ class social_media(models.Model):
     
 class main(models.Model):
     logo = models.FileField(upload_to='main/',null=False,blank=False)
-    field1= models.CharField(max_length = 64,null=False ,blank=False)
-    field2= models.CharField(max_length = 64,null=False ,blank=False)
-    field3= models.CharField(max_length = 64,null=False ,blank=False)
-    field4= models.CharField(max_length = 64,null=False ,blank=False)
+    field1= models.URLField(max_length = 64,null=False ,blank=False)
+    field2= models.URLField(max_length = 64,null=False ,blank=False)
+    field3= models.URLField(max_length = 64,null=False ,blank=False)
+    field4= models.URLField(max_length = 64,null=False ,blank=False)
+    class Meta:
+        verbose_name = 'navbar'
+        verbose_name_plural = 'navbars'
+
 class centure(models.Model):
     centure_name = models.CharField(max_length=64)
     centure_phone = models.IntegerField(blank=True,null= True)
