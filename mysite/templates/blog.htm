@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html dir="rtl">
+
+    <head>
+        <!--Css-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">        
+        <link rel="stylesheet" href={% static "index/blog.css" %}> 
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">        
+        <!--Css-->
+
+        <!--JavaScript-->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script src={% static "index/blog.js" %}></script> 
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <!--JavaScript-->
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <title>
+            Coda | This is our website
+        </title>
+        <link rel="shortcut icon" type="image/x-icon" href={% static "index/favicon.ico" %}/>
+
+    </head>
+
+    <body id="Main" onload="myFunction()">
+        
+
+
+        <!--page loader-->
+        <div id="loader" class="spinner-grow text-dark position-fixed" role="status">
+            
+        </div>
+        <!--page loader-->
+
+        <!--social-bar-->
+        <div id="social-bar" class="position-fixed">
+            <a href="www.instagram.com/hicoda.ir">
+                <img id="social-bar-1" class="social-bar-icon" src={% static "index/Dependencies/Images/social/instagram.png" %}>
+            </a>
+            <a href="www.telegram.com/hicoda.ir">
+                <img id="social-bar-2" class="social-bar-icon" src={% static "index/Dependencies/Images/social/telegram.png" %}>
+            </a>
+            <a href="www.bale.com/hicoda.ir">
+                <img id="social-bar-3" class="social-bar-icon" src={% static "index/Dependencies/Images/social/bale.png" %}>
+            </a>
+            <a href="www.hithub.com/hicoda.ir">
+                <img id="social-bar-4" class="social-bar-icon" src={% static "index/Dependencies/Images/social/github.png" %}>
+            </a>
+        </div>
+        <!--social-bar-->
+
+        <div id="main" class="container-fluid">      
+            <!--navbar-->
+            <div id="navbar" class="row d-flex justify-content-center">
+                <div id="navbar-right" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-4 col-auto ml-auto">
+                    <div id="navbar-right-row" class="row d-flex justify-content-center">    
+                        <div id="navbar-right-logo" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 d-flex justify-content-center align-self-center">
+                            <a href="#">
+                                <img id="navbar-right-logo-img" src="Dependencies/Images/Logo/logo.png"/>
+                            </a>
+                        </div>
+                        <div id="navbar-right-blog" class="col-xl-2 col-lg-2 d-none d-lg-block justify-content-center align-self-end">
+                            <a href="../blogpage/blog.htm" style="text-decoration: none; color: black;">    
+                                <h6 id="navbar-right-blog-h6" class="text" type="button">
+                                    بلاگ
+                                </h6>
+                            </a>
+                        </div>
+                        <div id="navbar-right-contact" class="col-xl-2 col-lg-2 col-md-2 col-sm-2 d-none d-md-block justify-content-center align-self-end">
+                            <a href="../contactpage/contact.htm" style="text-decoration: none; color: black;">
+                                <h6 id="navbar-right-contact-h6" type="button">
+                                    ارتباط
+                                </h6>
+                            </a>
+                        </div>
+                    </div>    
+                </div>
+    
+                <div id="navbar-left" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-2 col-auto mr-auto"> 
+                    <div id="nevbar-left-row" class="row d-flex justify-content-center">
+                        <div id="navbar-left-cost" class="col-xl-2 col-lg-2 d-none d-lg-block justify-content-center align-self-center">
+                                <a href="../costspage/costs.htm" style="text-decoration: none; color: black;">
+                                    <h6 id="navbar-left-cost-h6" type="button">
+                                        تعرفه
+                                    </h6>
+                                </a>
+                        </div>
+                        <div id="navbar-left-portfolio" class="col-xl-2 col-lg-2 col-md-3 d-none d-md-block justify-content-center align-self-center">
+                            <a href="../portfoliopage/portfolio.htm" style="text-decoration: none; color: black;">
+                                <h6 id="navbar-left-portfolio-h6" type="button">
+                                    پورتفولیو
+                                </h6>
+                            </a>
+                        </div>
+                        <div id="navbar-left-sign" class="col-xl-3 col-lg-3 col-md-5 col-sm-5 d-none d-sm-block justify-content-center align-self-center">
+                            <button id="navbar-left-sign-button" class="row btn btn-primary button" type="button" data-toggle="modal" data-target="#navbar-modal"> 
+                                <h6 id="navbar-left-sign-button-h6">
+                                    مشترک شو
+                                </h6>
+                                <img id="navbar-left-sign-button-img" src="Dependencies/Images/Navbar/Sign Icon.png"/>
+                            </button>
+                        </div>
+                        <div id="navbar-left-hamburger" class="col-xl-1 col-lg-1 col-md-1 col-sm-2 col-xs-1 d-flex justify-content-center align-self-center">
+                            <img id="navbar-left-hamburger-img" type="button" onclick="openNav()" src="Dependencies/Images/Navbar/Left Menu Icon.png"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--navbar-->
+
+            <!--navbar-scroll-->
+            <div id="navbar-scroll" class="row d-flex justify-content-center fixed-top">
+                <div id="navbar-right" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-4 col-auto ml-auto">
+                    <div id="navbar-right-row" class="row d-flex justify-content-center">    
+                        <div id="navbar-right-logo" class="col-xl-5 col-lg-3 col-md-3 col-sm-3 col-xs-3 d-flex justify-content-center align-self-center">
+                            <a href="#">
+                                <img id="navbar-right-logo-img" src="Dependencies/Images/Logo/logo.png"/>
+                            </a>
+                        </div>
+                        <div id="navbar-right-blog" class="col-xl-2 col-lg-2 d-none d-lg-block justify-content-center align-self-end">
+                            <a href="../blogpage/blog.htm" style="text-decoration: none; color: white;">    
+                                <h6 id="navbar-right-blog-h6" class="text" type="button">
+                                    بلاگ
+                                </h6>
+                            </a>
+                        </div>
+                        <div id="navbar-right-contact" class="col-xl-2 col-lg-2 col-md-2 col-sm-2 d-none d-md-block justify-content-center align-self-end">
+                            <a href="../contactpage/contact.htm" style="text-decoration: none; color: white;">
+                                <h6 id="navbar-right-contact-h6" type="button">
+                                    ارتباط
+                                </h6>
+                            </a>
+                        </div>
+                    </div>    
+                </div>
+    
+                <div id="navbar-left" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-2 col-auto mr-auto"> 
+                    <div id="nevbar-left-row" class="row d-flex justify-content-center">
+                        <div id="navbar-left-cost" class="col-xl-2 col-lg-2 d-none d-lg-block justify-content-center align-self-center">
+                                <a href="../costspage/costs.htm" style="text-decoration: none; color: white;">
+                                    <h6 id="navbar-left-cost-h6" type="button">
+                                        تعرفه
+                                    </h6>
+                                </a>
+                        </div>
+                        <div id="navbar-left-portfolio" class="col-xl-2 col-lg-2 col-md-3 d-none d-md-block justify-content-center align-self-center">
+                            <a href="../portfoliopage/portfolio.htm" style="text-decoration: none; color: white;">
+                                <h6 id="navbar-left-portfolio-h6" type="button">
+                                    پورتفولیو
+                                </h6>
+                            </a>
+                        </div>
+                        <div id="navbar-left-sign" class="col-xl-3 col-lg-3 col-md-5 col-sm-5 d-none d-sm-block justify-content-center align-self-center">
+                            <button id="navbar-left-sign-button" class="row btn btn-primary button" type="button" data-toggle="modal" data-target="#navbar-modal"> 
+                                <h6 id="navbar-left-sign-button-h6">
+                                    مشترک شو
+                                </h6>
+                                <img id="navbar-left-sign-button-img" src="Dependencies/Images/Header/SignIcon.png"/>
+                            </button>
+                        </div>
+                        <div id="navbar-left-hamburger" class="col-xl-1 col-lg-1 col-md-1 col-sm-2 col-xs-1 d-flex justify-content-center align-self-center">
+                            <img id="navbar-left-hamburger-img" type="button" onclick="openNav()" src="Dependencies/Images/Header/LeftMenuIcon.png"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--navbar-scroll-->
+
+            <!--modal-->
+            
+                <!--modal-->
+                <div id="navbar-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                    <div class="modal-dialog d-flex justify-content-center" role="document">
+                        <!--modal-base-->
+                        <div id="navbar-modal-content" class="modal-content">
+                            <button id="navbar-modal-close" type="button" class="btn close col-2" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <div id="navbar-modal-title" class="row d-flex justify-content-center">
+                                <h3 id="navbar-modal-title-h3" class="row d-flex justify-content-center">
+                                    از دیدن شما خیلی خوشحالیم!
+                                </h3>
+                            </div>
+                            <div id="navbar-modal-sign" class="row d-flex justify-content-center">
+                                <form id="navbar-modal-form" class="row d-flex justify-content-center">                                                 
+                                    <input id="navbar-modal-form-input1" type="text" placeholder=" نام و نام خانوادگی " class="form-control" required>
+                                    <input id="navbar-modal-form-input2" type="number" placeholder="شماره تماس" class="form-control" required>
+                                    <input id="navbar-modal-form-input3" type="email" placeholder="پست الکترونیکی" class="form-control" required>
+                                    <input id="navbar-modal-form-button" type="submit" class="btn btn-secondary btn-light button1" value="">
+                                </form>
+                            </div>
+                            <div id="navbar-modal-caption" class="row d-flex justify-content-center">
+                                <h4 id="navbar-modal-caption-h4" style="margin: 6px 0px 0px 0px;">
+                                    لازم نیست کار دیگه ای بکنی. ما باهات تماس می گیریم.
+                                </h4>
+                            </div>
+                            <div id="navbar-modal-social" class="row d-flex justify-content-center">
+                                <button id="navbar-modal-social-1" class="btn"></button>
+                                <button id="navbar-modal-social-2" class="btn"></button>
+                                <button id="navbar-modal-social-3" class="btn"></button>
+                                <button id="navbar-modal-social-4" class="btn"></button>
+                            </div>
+                        </div>
+                        <!--modal-base-->
+                    </div>
+                </div>
+                <!--modal-->
+            <!--modal-->
+            
+            <!--hamburger menu-->
+            <div id="side-nav" class="sidenav">
+                <button id="side-nav-close" type="button" class="btn close col-1" aria-label="Close" onclick="closeNav()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div id="side-nav-logo" class="col-12 d-flex justify-content-center align-self-center">
+                    <img id="side-nav-logo-img" src="Dependencies/Images/Logo/logo.png"/>
+                </div>
+                <!--for large screens-->
+                <div id="side-nav-1" class="row d-none d-lg-block justify-content-center">
+                    <h1 id="side-nav-1-title" class="col-12 d-flex justify-content-center align-self-center">
+                        <span style="color: rgb(47, 0, 0);">به</span> 
+                        <span style="color: rgb(138, 0, 0);">وقت</span>  
+                        <span style="color: red;">تغییر</span>
+                        <span style="color: black;">!</span>
+                    </h1>
+                    <h6 id="side-nav-1-caption" class="col-9 d-flex justify-content-center align-self-center">
+                        امروز تقریبا هر کسب و کاری که میشناسیم میتونه برای خودش یه بستر آنلاین داشته باشه. مثل سایت یا اپلیکیشن.<br>
+                        اما مهم اینه که کار رو دست کی میسپرید. ما اینجاییم تا بهترین تجربه ممکن رو براتون رقم بزنیم. مرتبط بشید!
+                    </h6>
+                    <div id="side-nav-1-social" class="col6 d-flex justify-content-center align-self-center">
+                        <button id="side-nav-1-social-button1" class="btn social-icon"></button>
+                        <button id="side-nav-1-social-button2" class="btn social-icon"></button>
+                        <button id="side-nav-1-social-button3" class="btn social-icon"></button>
+                    </div>
+                </div>
+                <!--for large screens-->
+
+                <!--for small screens-->
+                <div id="side-nav-2" class="row d-lg-none d-flex justify-content-center">
+                    <a href="../BlogPage/Blog.htm" style="text-decoration: none; color: black;">
+                        <button id="side-nav-1-social-button1" class="btn nav-item">بلاگ</button>
+                    </a>
+                    <a href="../ContactPage/Contact.htm" style="text-decoration: none; color: black;">
+                        <button id="side-nav-1-social-button1" class="btn nav-item">مرتبط شیم</button>
+                    </a>
+                    <a href="../CostsPage/Costs.htm" style="text-decoration: none; color: black;">
+                        <button id="side-nav-1-social-button1" class="btn nav-item">تعرفه</button>
+                    </a>
+                    <a href="../PortfolioPage/Portfolio.htm" style="text-decoration: none; color: black;">
+                        <button id="side-nav-1-social-button1" class="btn nav-item">پورتفولیو</button>
+                    </a>
+                </div>
+                <!--for small screens-->
+            </div>
+            <!--hamburger menu-->
+            
+            <!--content-->
+            <div id="content" class="row justify-content-center" style="margin-top: 60px;">
+                <!--side-->
+                <div id="content-side" class="col-xl-3 col-lg-3 d-none d-lg-block" style="height: 900px; background-color: rgb(15, 15, 15); border-radius: 25px; margin-left: 40px;">
+                    <div id="content-side-search" class="row justify-content-center" style="margin-top: 40px;">
+                        <h5 style="color: white; font-size: 18px; margin-bottom: 5px;">
+                            جست و جو در بلاگ
+                        </h5>
+                        <form id="navbar-modal-form" class="row d-flex justify-content-center">                                                 
+                            <input id="search-field" type="text" placeholder="یک عنوان یا کلمه" class="form-control" required>
+                            <input id="navbar-modal-form-button" type="submit" class="btn btn-secondary btn-light button1" value="">
+                        </form>
+                    </div>
+                </div>
+                <!--side-->
+
+                <!--posts-->
+                <div id="content-posts" class="col-xl-8 col-lg-8 col-md-10 col-sm-10 col-xs-10" style="height: 480px; background-color: white; border-radius: 25px; box-shadow: 0 2px 10px rgb(226, 226, 226);">
+                    <div id="content-post-name" class="row col-12" style="margin: 40px 15px 40px 15px;">
+                        <div id="content-post-name-title" class="row col-6">
+                            <img id="content-post-name-title-img" src={% static "index/Dependencies/Images/Ellipse 22.png" %} style="text-align: right; width: 30px; height: 30px; margin-left: 15px;"/>
+                            <h3 id="content-post-name-title-h4" style="margin-top: -3px;">
+                                عنوان پست شماره یک
+                            </h3>
+                        </div>
+                        <div id="content-post-name-tag" class="row col-6">
+                            <button id="content-post-name-tag-button" class="btn btn-light tag-button" style="margin-left: 10px; box-shadow: 0 2px 10px rgb(233, 255, 190);">
+                                برچسب
+                            </button>
+                            <button id="content-post-name-tag-button" class="btn btn-light tag-button" style="margin-left: 10px; box-shadow: 0 2px 10px rgb(233, 255, 190);">
+                                برچسب
+                            </button>
+                            <button id="content-post-name-tag-button" class="btn btn-light tag-button" style="margin-left: 10px; box-shadow: 0 2px 10px rgb(233, 255, 190);">
+                                برچسب
+                            </button>
+                        </div>
+                    </div>
+                    <div id="content-post-content" class="row col-12 justify-content-end">
+                        <div id="content-post-content-picture" class="col-6">
+                            <img src={% static "index/Dependencies/Images/Rectangle 486.png" %} style="width: 90%; float: right; margin-right: 10px;">
+                        </div>
+                        <div id="content-post-content-parag" class="col-6">
+                            <p id="content-post-content-parag-p" style="margin-right: -10px;">
+                                این یک متن آزمایشی برای مشاهده ی توضیحات پست
+                                شماره یک است که به صورت آزمایشی در اینجا قرار داده شده و
+                                تغییرات مورد نیاز آن سنجیده می شود. خواهشمندیم به چیزی
+                                دست نزنید و آرام نشینید.این یک متن آزمایشی برای مشاهده 
+                                توضیحات پست  شماره یک است که به صورت آزمایشی در اینجا
+                                قرار داده شده و تغییرات مورد نیاز آن سنجیده می شود.
+                                خواهشمندیم به چیزی دست نزنید و آرام بنشینید.
+                            </p>
+                        </div>
+                        <button id="content-post-content-parag-button" class="btn btn-light parag-button">
+                            مشاهده
+                        </button>
+                    </div>
+                </div>
+                <!--posts-->
+            </div>
+            <!--content-->
+
+            <!--footer-->
+            <div id="footer" class="row d-flex justify-content-center">
+                <div id="footer-back" class="row justify-content-center">
+                    <h5 id="footer-caption" class="col-12 justify-content-center align-self-center">
+                        <b>
+                            طراحی شده توسط کودا ::: تمامی حقوق محفوظ است
+                        </b>
+                    </h5>
+                </div>
+            </div>
+            <!--footer--> 
+        </div>
+
+    </body>
+    <script>
+        AOS.init();
+    </script>
+
+</html>
