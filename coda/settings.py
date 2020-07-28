@@ -26,7 +26,7 @@ SECRET_KEY = 'vm-^c@39t68gd3ix=q4stw$)z0trflfbdjxxsq6^*mi9*j@(!@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["5.253.24.149","hicoda.ir","www.hicoda.ir"]
 
 
 # Application definition
@@ -124,11 +124,8 @@ CSRF_COOKIE_SECURE = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 # Static Files
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
 # CDEditor
 CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
 CKEDITOR_UPLOAD_PATH = "uploads/"
