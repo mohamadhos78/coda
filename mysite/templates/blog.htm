@@ -61,19 +61,19 @@
                 <div id="navbar-right" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-4 col-auto ml-auto">
                     <div id="navbar-right-row" class="row d-flex justify-content-center">    
                         <div id="navbar-right-logo" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 d-flex justify-content-center align-self-center">
-                            <a href="#">
-                                <img id="navbar-right-logo-img" src={%  static "index/Dependencies/Images/Logo/logo.png" %} />
+                            <a href="../">
+                                <img id="navbar-right-logo-img" src={{main.logo}} />
                             </a>
                         </div>
                         <div id="navbar-right-blog" class="col-xl-2 col-lg-2 d-none d-lg-block justify-content-center align-self-end">
-                            <a href="../blogpage/blog.htm" style="text-decoration: none; color: black;">    
+                            <a href={{main.field1}} style="text-decoration: none; color: black;">    
                                 <h6 id="navbar-right-blog-h6" class="text" type="button">
                                     بلاگ
                                 </h6>
                             </a>
                         </div>
                         <div id="navbar-right-contact" class="col-xl-2 col-lg-2 col-md-2 col-sm-2 d-none d-md-block justify-content-center align-self-end">
-                            <a href="../contactpage/contact.htm" style="text-decoration: none; color: black;">
+                            <a href={{main.field2}} style="text-decoration: none; color: black;">
                                 <h6 id="navbar-right-contact-h6" type="button">
                                     ارتباط
                                 </h6>
@@ -85,14 +85,14 @@
                 <div id="navbar-left" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-2 col-auto mr-auto"> 
                     <div id="nevbar-left-row" class="row d-flex justify-content-center">
                         <div id="navbar-left-cost" class="col-xl-2 col-lg-2 d-none d-lg-block justify-content-center align-self-center">
-                                <a href="../costspage/costs.htm" style="text-decoration: none; color: black;">
+                                <a href={{main.field3}} style="text-decoration: none; color: black;">
                                     <h6 id="navbar-left-cost-h6" type="button">
                                         تعرفه
                                     </h6>
                                 </a>
                         </div>
                         <div id="navbar-left-portfolio" class="col-xl-2 col-lg-2 col-md-3 d-none d-md-block justify-content-center align-self-center">
-                            <a href="../portfoliopage/portfolio.htm" style="text-decoration: none; color: black;">
+                            <a href={{main.field4}} style="text-decoration: none; color: black;">
                                 <h6 id="navbar-left-portfolio-h6" type="button">
                                     پورتفولیو
                                 </h6>
@@ -103,11 +103,11 @@
                                 <h6 id="navbar-left-sign-button-h6">
                                     مشترک شو
                                 </h6>
-                                <img id="navbar-left-sign-button-img" src={% static "index/Dependencies/Images/Navbar/Sign Icon.png"}/>
+                                <img id="navbar-left-sign-button-img" src={% static "index/Dependencies/Images/Navbar/person/Sign Icon.png"}/>
                             </button>
                         </div>
                         <div id="navbar-left-hamburger" class="col-xl-1 col-lg-1 col-md-1 col-sm-2 col-xs-1 d-flex justify-content-center align-self-center">
-                            <img id="navbar-left-hamburger-img" type="button" onclick="openNav()" src= {% static  "index/Dependencies/Images/Navbar/Left Menu Icon.png" %}/>
+                            <img id="navbar-left-hamburger-img" type="button" onclick="openNav()" src={% static "index/Dependencies/Images/Navbar/LeftMenuIcon.png" %}/>
                         </div>
                     </div>
                 </div>
@@ -119,19 +119,19 @@
                 <div id="navbar-right" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-4 col-auto ml-auto">
                     <div id="navbar-right-row" class="row d-flex justify-content-center">    
                         <div id="navbar-right-logo" class="col-xl-5 col-lg-3 col-md-3 col-sm-3 col-xs-3 d-flex justify-content-center align-self-center">
-                            <a href="#">
-                                <img id="navbar-right-logo-img" src={% static "index/Dependencies/Images/Logo/logo.png" %}/>
+                            <a href="../">
+                                <img id="navbar-right-logo-img" src={{main.logo}}/>
                             </a>
                         </div>
                         <div id="navbar-right-blog" class="col-xl-2 col-lg-2 d-none d-lg-block justify-content-center align-self-end">
-                            <a href="../blogpage/blog.htm" style="text-decoration: none; color: white;">    
+                            <a href={{main.field1}} style="text-decoration: none; color: white;">    
                                 <h6 id="navbar-right-blog-h6" class="text" type="button">
                                     بلاگ
                                 </h6>
                             </a>
                         </div>
                         <div id="navbar-right-contact" class="col-xl-2 col-lg-2 col-md-2 col-sm-2 d-none d-md-block justify-content-center align-self-end">
-                            <a href="../contactpage/contact.htm" style="text-decoration: none; color: white;">
+                            <a href={{main.field2}} style="text-decoration: none; color: white;">
                                 <h6 id="navbar-right-contact-h6" type="button">
                                     ارتباط
                                 </h6>
@@ -143,14 +143,14 @@
                 <div id="navbar-left" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-2 col-auto mr-auto"> 
                     <div id="nevbar-left-row" class="row d-flex justify-content-center">
                         <div id="navbar-left-cost" class="col-xl-2 col-lg-2 d-none d-lg-block justify-content-center align-self-center">
-                                <a href="../costspage/costs.htm" style="text-decoration: none; color: white;">
+                                <a href={{main.field3}} style="text-decoration: none; color: white;">
                                     <h6 id="navbar-left-cost-h6" type="button">
                                         تعرفه
                                     </h6>
                                 </a>
                         </div>
                         <div id="navbar-left-portfolio" class="col-xl-2 col-lg-2 col-md-3 d-none d-md-block justify-content-center align-self-center">
-                            <a href="../portfoliopage/portfolio.htm" style="text-decoration: none; color: white;">
+                            <a href={{main.field4}} style="text-decoration: none; color: white;">
                                 <h6 id="navbar-left-portfolio-h6" type="button">
                                     پورتفولیو
                                 </h6>

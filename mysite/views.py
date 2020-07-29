@@ -159,19 +159,19 @@ class portfolio(TemplateView):
         return render(request,"portfolio.htm", context)
 
 class blog(TemplateView):
+    mains = []
+    main_query = main.objects.all()
+    for c in main_query:
+        mains.append({
+            'logo':c.logo.url ,
+            'field1':c.field1 ,
+            'field2':c.field2 ,
+            'field3':c.field3 ,
+            'field4':c.field4 ,
+        })
     def get(self, request, **kwargs):
-        # mains = []
-        # main_query = main.objects.all()
-        # for c in main_query:
-        #    mains.append({
-        #        'logo':c.logo ,
-        #        'field1':c.field1 ,
-        #        'field2':c.field2 ,
-        #        'field3':c.field3 ,
-        #        'field4':c.field4 ,
-        #    })
         context ={
-        #    'main':self.mains[0] ,
+           'main':self.mains[0] ,
         }
         return render(request,"blog.htm", context)
 
