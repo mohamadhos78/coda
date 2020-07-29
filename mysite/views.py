@@ -115,7 +115,7 @@ class costs(TemplateView):
     main_query = main.objects.all()
     for c in main_query:
         mains.append({
-            'logo':c.logo ,
+            'logo':c.logo.url ,
             'field1':c.field1 ,
             'field2':c.field2 ,
             'field3':c.field3 ,
