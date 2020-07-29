@@ -170,9 +170,22 @@ class blog(TemplateView):
             'field4':c.field4 ,
         })
     def get(self, request, **kwargs):
-        context ={
-           'main':self.mains[0] ,
+        form = emailservice()
+        context = {
+            'main':self.mains[0] ,
+            'form': form ,
         }
         return render(request,"blog.htm", context)
-
-
+    def post(self, request, **kwargs):
+        form = emailservice()
+        filled_form = emailservice(request.POST)
+        if filled_form.is_valid():
+            filled_form.save()
+        else:
+            form = emailservice()
+        form = emailservice()
+        context ={
+            'main':self.mains[0] ,
+            'form': form
+        }
+        return render(request,"blog.htm", context)
