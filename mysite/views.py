@@ -29,7 +29,7 @@ class contact_us(TemplateView):
     def get(self, request, **kwargs):
         context ={
             'users':self.users ,
-            'mains':self.mains[0] ,
+            'main':self.mains[0] ,
             'centure':self.centure_form ,
             'form':self.form ,
         }
