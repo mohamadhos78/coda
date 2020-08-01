@@ -52,9 +52,7 @@ class contact_us(TemplateView):
 class index(TemplateView):
     mains = []
     users = []
-    posts = []
     user_query = adminProfile.objects.all()
-    post_query = Article.objects.filter(promote=True)
     main_query = main.objects.all()
     for c in main_query:
         mains.append({
@@ -76,15 +74,7 @@ class index(TemplateView):
         'telegram':a.social_media.telegram ,
         'bale':a.social_media.bale ,
         'instagram':a.social_media.instagram ,
-        })
-    for b in post_query:
-        posts.append({
-        'author':b.author ,
-        'cover':b.cover.url ,
-        'content':b.content , 
-        'category':b.category,
-        'title':b.title ,
-        })     
+        })  
     def get(self, request, **kwargs):
         
         context ={
@@ -162,6 +152,8 @@ class portfolio(TemplateView):
 class blog(TemplateView):
     results = []
     mains = []
+    posts = []
+    post_query = Article.objects.all()
     main_query = main.objects.all()
     for c in main_query:
         mains.append({
@@ -170,6 +162,14 @@ class blog(TemplateView):
             'field2':c.field2 ,
             'field3':c.field3 ,
             'field4':c.field4 ,
+        })
+    for b in post_query:
+        posts.append({
+        'author':b.author ,
+        'cover':b.cover.url ,
+        'content':b.content , 
+        'category':b.category,
+        'title':b.title ,
         })
     def get(self, request, **kwargs):
         query = request.GET.get('q','')  
