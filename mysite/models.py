@@ -59,6 +59,7 @@ class adminProfile(models.Model):
 
     def __str__(self):
         return self.user.first_name + " " + self.user.last_name
+
 class social_media(models.Model):
     github    = models.URLField(max_length= 512 ,null=True,blank=True)
     linkedin  = models.URLField(max_length= 512 ,null=True,blank=True)

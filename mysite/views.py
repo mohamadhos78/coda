@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 from .models import *
 from .forms import emailservice ,centure_form
+from django.db.models import Q #for searching in blog
 
 
 class contact_us(TemplateView):
@@ -84,8 +85,8 @@ class index(TemplateView):
         'category':b.category,
         'title':b.title ,
         })     
-    def get(self, request, **kwargs):  
-        form = emailservice()
+    def get(self, request, **kwargs):
+        
         context ={
             'users':self.users ,
             'posts':self.posts ,
@@ -159,6 +160,7 @@ class portfolio(TemplateView):
         return render(request,"portfolio.htm", context)
 
 class blog(TemplateView):
+    results = []
     mains = []
     main_query = main.objects.all()
     for c in main_query:
@@ -170,10 +172,19 @@ class blog(TemplateView):
             'field4':c.field4 ,
         })
     def get(self, request, **kwargs):
+        query = request.GET.get('q','')  
+        form = emailservice()
+        #you say that you working on a global result
+        if query:
+            queryset = Q(title__icontains=query) | Q(content__icontains=query)
+            #include searched data in title or content
+            self.results = Article.objects.filter(queryset).distinct()
+            #distinct remove duplicate search results
         form = emailservice()
         context = {
             'main':self.mains[0] ,
             'form': form ,
+            'results':self.results ,
         }
         return render(request,"blog.htm", context)
     def post(self, request, **kwargs):
@@ -186,6 +197,7 @@ class blog(TemplateView):
         form = emailservice()
         context ={
             'main':self.mains[0] ,
-            'form': form
+            'form': form ,
+            'results':self.results ,
         }
         return render(request,"blog.htm", context)

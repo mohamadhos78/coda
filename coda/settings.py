@@ -119,7 +119,6 @@ USE_TZ = True
 #Security
 SECURE_SSL_HOST = True
 SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
