@@ -150,7 +150,6 @@ class portfolio(TemplateView):
         return render(request,"portfolio.htm", context)
 
 class blog(TemplateView):
-    results = []
     mains = []
     posts = []
     post_query = Article.objects.all()
@@ -178,13 +177,20 @@ class blog(TemplateView):
         if query:
             queryset = Q(title__icontains=query) | Q(content__icontains=query)
             #include searched data in title or content
-            self.results = Article.objects.filter(queryset).distinct()
+            self.post_query = Article.objects.filter(queryset).distinct()
             #distinct remove duplicate search results
+            for b in post_query:
+                posts.append({
+                    'author':b.author  ,
+                    'cover' :b.cover.url , 
+                    'content' :b.content ,
+                    'category' :b.category ,
+                    'title' :b.title ,
+                })
         form = emailservice()
         context = {
             'main':self.mains[0] ,
             'form': form ,
-            'results':self.results ,
             'posts' :self.posts ,
         }
         return render(request,"blog.htm", context)
@@ -199,7 +205,6 @@ class blog(TemplateView):
         context ={
             'main':self.mains[0] ,
             'form': form ,
-            'results':self.results ,
             'posts' :self.posts ,
         }
         return render(request,"blog.htm", context)
