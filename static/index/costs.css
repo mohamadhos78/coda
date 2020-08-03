@@ -30,7 +30,7 @@ html{
 
 #main{
     font-family: Yekan-N;
-    background-image: url('Dependencies/Images/Back/Back.png');
+    background-image: url('Dependencies/Images/Back/Landing\ -\ 768.png');
     background-repeat: no-repeat;
     background-size: 100%;
     transition: opacity .5s;
@@ -483,7 +483,253 @@ h6{
     text-align: right;
 }
 /*************** H's Right-Align ****************/
+/*************** cost calaculate ****************/
+#div-calculate{
+    margin-top: 2em;
+    background-color: lavender;
+    padding-right: 6em;
+    padding-left: 6em;
+}
+#h1title-costonline{
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    padding-top: 2em;
+}
+#typenumber-site{
+    margin-top: 2em;
+    padding-right: ;
+}
 
+#div-typesite{
+    z-index: 0;
+}
+#type-site{
+    padding-top: 3em;
+    padding-right: ;
+
+}
+#h4title-type{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: ;
+
+}
+#number-damane{
+    padding-top: 3em;
+    padding-left: 2em;
+}
+/**type of site**/
+
+input[id=company] {
+    width: 125px;
+    height: 40px;
+    margin: 0px 0px 0px -30px;
+    background-color: orangered;
+    border: orangered;
+    color: whitesmoke;
+    z-index: 2;
+    border-radius: 20px;
+    font-size: 13px;
+  }
+  input[id=company]:focus {
+    border: orangered;
+    z-index: 3;
+    background-color: orangered;
+  }
+
+
+  input[id=stores] {
+    width: 125px;
+    height: 40px;
+    margin: 0px 0px 0px 0px;
+    background-color: black;
+    border: black;
+    color: whitesmoke;
+    z-index: 1;
+    border-radius: 20px;
+    font-size: 13px;
+  }
+  input[id=stores]:focus {
+    border: black;
+    z-index: 3;
+  }
+
+
+  input[id=special] {
+    width: 125px;
+    height: 40px;
+    margin: 0px -30px 0px 0px;
+    background-color: #00E25A;
+    border: #00E25A;
+    color: whitesmoke;
+    z-index: 0;
+    border-radius: 20px;
+    font-size: 13px;
+  }
+  input[id=special]:focus {
+    border: #00E25A;
+    z-index: 3;
+  }
+  #h4title-number{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  #sellecnumber{
+      border-radius: 20px;
+  }
+  select.form-control {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-origin: content-box;
+    border-radius: 25px;
+    height: 3em;
+    width: 4em;
+    margin-bottom:;
+    font-size: 20px;
+}
+
+/**css range slider**/
+
+#rangeslider{
+    padding-top: 4em;
+}
+#range{
+    padding-top: 1em;
+}
+#text-range{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 10px;
+    padding-right: 0;
+  }
+  #text-megabyte{
+    text-align: bottom;
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 0em;
+    padding-top: 1.2em;
+  }
+  #div-text-megabyte{
+    padding-right: 2em;
+  }
+  #div-output{
+      padding-right: ;
+      
+  }
+  #output{
+    text-align: top;
+    font-size: 30px;
+    font-weight: bold;
+  }
+#myinput {
+    background: linear-gradient(to right, #FF5400 0%, #FF5400 5%, #bbbbbb 5%, #bbbbbb 100%);
+    border: none;
+    border-radius: 8px;
+    height: 12px;
+    width: 40em;
+    outline: none;
+    transition: background 450ms ease-in;
+    -webkit-appearance: none;
+  }
+  input[type='range']::-webkit-slider-thumb {
+    width: 10px;
+    -webkit-appearance: none;
+    height: 28px;
+    cursor: pointer;
+    border-radius: 10px;
+    background: #434343;
+    -webkit-appearance: none;
+  }
+#accessories{
+    padding-top: 3em;
+    padding-right: 3em;
+}
+#title-checkbox{
+    font-size: 30px;
+    font-weight: bold;
+}
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+  }
+  
+  /* Hide the browser's default checkbox */
+  input[type='checkbox'] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border: solid orangered;
+    border: 10px;
+    border-radius: 15px;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+    border: solid orangered;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: #eee;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    border: solid orangered;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid orangered;
+    border-width: 0 3px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  
+
+/*cost calaculate*/
 /* footer */
 #footer-back{
     background-color: rgb(14, 14, 14);

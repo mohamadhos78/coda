@@ -49,6 +49,10 @@ else {
 }
 /**************** navbar-scroll ****************/
 
+/*************** css range slider **************/
+
+
+
 /**************** fix-width ****************/
 function resize() {
 if ( $(window).width() > 1370) {     
