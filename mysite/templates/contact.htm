@@ -188,7 +188,7 @@
                                 </h3>
                             </div>
                             <div id="navbar-modal-sign" class="row d-flex justify-content-center">
-                                <form id="navbar-modal-form" class="row d-flex justify-content-center" action={% url "contact_us" %} method="POST"%}>
+                                <form id="navbar-modal-form" class="row d-flex justify-content-center" action="." method="POST" %}>
                                 {% csrf_token %}                                                
                                     <input id="navbar-modal-form-input1"name="name" type="text" placeholder=" نام و نام خانوادگی " class="form-control" required>
                                     <input id="navbar-modal-form-input2"name="family" type="tel" placeholder="شماره تماس" class="form-control" required>

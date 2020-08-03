@@ -15,7 +15,7 @@ def validate_file_extension(value):
 class Article(models.Model):
     title = models.CharField(max_length=128, null=False, blank=False)
     cover = models.FileField(upload_to='article_cover/', null=False, blank=False, validators=[validate_file_extension])
-    content = RichTextField()
+    content = models.TextField(null=False,blank=False)
     created_at = models.DateTimeField(auto_now = True)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
     author = models.ForeignKey('adminProfile', on_delete=models.CASCADE)

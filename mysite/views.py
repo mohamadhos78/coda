@@ -151,6 +151,7 @@ class portfolio(TemplateView):
 
 class blog(TemplateView):
     mains = []
+    query=None
     posts = []
     results =[]
     post_query = Article.objects.all()
@@ -167,16 +168,18 @@ class blog(TemplateView):
         posts.append({
         'author':b.author ,
         'cover':b.cover.url ,
-        'content':b.content , 
+        'content':b.content[:256]+"..." , 
         'category':b.category,
         'title':b.title ,
         })
     def get(self, request, **kwargs):
-        query = request.GET.get('q','')  
+        self.query = request.GET.get('q')
         form = emailservice()
         #you say that you working on a global result
-        if query:
-            queryset = Q(title__icontains=query) | Q(content__icontains=query)
+        if self.query:
+            self.results = []
+            queryset = Q(title__icontains=self.query) | Q(content__contains=self.query)
+            print(type(self.query) )
             #include searched data in title or content
             result_query = Article.objects.filter(queryset).distinct()
             #distinct remove duplicate search results
@@ -188,12 +191,15 @@ class blog(TemplateView):
                     'category' :result.category ,
                     'title'    :result.title ,
                 })
+        else:
+            self.results = []
         form = emailservice()
         context = {
             'main':self.mains[0] ,
             'form': form ,
             'posts' :self.posts ,
             'results' :self.results ,
+            'query':self.query,
         }
         return render(request,"blog.htm", context)
     def post(self, request, **kwargs):
@@ -208,5 +214,6 @@ class blog(TemplateView):
             'main':self.mains[0] ,
             'form': form ,
             'posts' :self.posts ,
+            'query':self.query,
         }
         return render(request,"blog.htm", context)
