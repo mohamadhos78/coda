@@ -269,8 +269,8 @@
                         <h5 style="color: white; font-size: 18px; margin-bottom: 10px;">
                             جست و جو در بلاگ
                         </h5>
-                        <form id="navbar-modal-form" method=  class="row d-flex justify-content-center">                                                 
-                            <input id="search-field" type="text" placeholder="یک عنوان یا کلمه" class="form-control" required>
+                        <form id="navbar-modal-form" method="GET" action = "."  class="row d-flex justify-content-center">                                                 
+                            <input id="search-field" type="text" name="q" placeholder={%if q %}{{q}}{% else %}"یک عنوان یا کلمه" {% endif %} class="form-control" required>
                             <input id="navbar-modal-form-button" type="submit" class="btn btn-secondary btn-light button1" value="">
                         </form>
                     </div>
@@ -309,40 +309,77 @@
 
                 <!--posts-->
                 <div id="content-posts" class="col-xl-8 col-lg-8 col-md-10 col-sm-10 col-xs-10" style="background-color: white; border-radius: 25px; box-shadow: 0 2px 10px rgb(226, 226, 226); height: 100%;">
-                    <div id="content-post-name" class="row col-12" style="margin: 40px 15px 40px 15px;">
-                    {% for post in posts %}
-                        <div id="content-post-name-title" class="row col-xl-6 col-lg-7 col-md-7 col-sm-12 col-xs-12">
-                            <img id="content-post-name-title-img" src={% static "index/Dependencies/Images/Ellipse 22.png" %} style="text-align: right; width: 30px; height: 30px; margin-left: 15px;"/>
-                            <h3 id="content-post-name-title-h4" style="margin-top: -3px;">
-                                {{post.title}}
-                            </h3>
-                        </div>
-                        <div id="content-post-name-tag" class="row col-xl-6 col-lg-5 col-md-5 col-sm-12 col-xs-12">
-                            <button id="content-post-name-tag-button" class="btn btn-light tag-button" style="margin: 5px 0 5px 10px;">
-                                برچسب
-                            </button>
-                            <button id="content-post-name-tag-button" class="btn btn-light tag-button" style="margin: 5px 0 5px 10px;">
-                                برچسب
-                            </button>
-                            <button id="content-post-name-tag-button" class="btn btn-light tag-button" style="margin: 5px 0 5px 10px;">
-                                برچسب
-                            </button>
-                        </div>
-                    </div>
-                    <div id="content-post-content" class="row col-12 justify-content-end" style="padding-bottom: 25px;">
-                        <div id="content-post-content-picture" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 25px;">
-                            <img src={{post.cover}} style="width: 100%; float: right; margin-right: 10px;">
-                        </div>
-                        <div id="content-post-content-parag" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 25px;">
-                            <p id="content-post-content-parag-p" style="margin-right: 15px; text-align: justify;">
-                                {{post.title}}
-                            </p>
-                        </div>
-                        <button id="content-post-content-parag-button" class="btn btn-light parag-button">
-                            مشاهده
-                        </button>
-                    </div>
-                    {% endfor %}
+                    {% if results %}
+                        {% for post in results %}
+                            <div id="content-post-name" class="row col-12" style="margin: 40px 15px 40px 15px;">
+                                <div id="content-post-name-title" class="row col-xl-6 col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                                    <img id="content-post-name-title-img" src={% static "index/Dependencies/Images/Ellipse 22.png" %} style="text-align: right; width: 30px; height: 30px; margin-left: 15px;"/>
+                                    <h3 id="content-post-name-title-h4" style="margin-top: -3px;">
+                                        {{post.title}}
+                                    </h3>
+                                </div>
+                                <div id="content-post-name-tag" class="row col-xl-6 col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                    <button id="content-post-name-tag-button" class="btn btn-light tag-button" style="margin: 5px 0 5px 10px;">
+                                        برچسب
+                                    </button>
+                                    <button id="content-post-name-tag-button" class="btn btn-light tag-button" style="margin: 5px 0 5px 10px;">
+                                        برچسب
+                                    </button>
+                                    <button id="content-post-name-tag-button" class="btn btn-light tag-button" style="margin: 5px 0 5px 10px;">
+                                        برچسب
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="content-post-content" class="row col-12 justify-content-end" style="padding-bottom: 25px;">
+                                <div id="content-post-content-picture" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 25px;">
+                                    <img src={{post.cover}} style="width: 100%; float: right; margin-right: 10px;">
+                                </div>
+                                <div id="content-post-content-parag" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 25px;">
+                                    <p id="content-post-content-parag-p" style="margin-right: 15px; text-align: justify;">
+                                        {{post.title}}
+                                    </p>
+                                </div>
+                                <button id="content-post-content-parag-button" class="btn btn-light parag-button">
+                                    مشاهده
+                                </button>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        {% for post in posts %}
+                            <div id="content-post-name" class="row col-12" style="margin: 40px 15px 40px 15px;">
+                                <div id="content-post-name-title" class="row col-xl-6 col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                                    <img id="content-post-name-title-img" src={% static "index/Dependencies/Images/Ellipse 22.png" %} style="text-align: right; width: 30px; height: 30px; margin-left: 15px;"/>
+                                    <h3 id="content-post-name-title-h4" style="margin-top: -3px;">
+                                        {{post.title}}
+                                    </h3>
+                                </div>
+                                <div id="content-post-name-tag" class="row col-xl-6 col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                    <button id="content-post-name-tag-button" class="btn btn-light tag-button" style="margin: 5px 0 5px 10px;">
+                                        برچسب
+                                    </button>
+                                    <button id="content-post-name-tag-button" class="btn btn-light tag-button" style="margin: 5px 0 5px 10px;">
+                                        برچسب
+                                    </button>
+                                    <button id="content-post-name-tag-button" class="btn btn-light tag-button" style="margin: 5px 0 5px 10px;">
+                                        برچسب
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="content-post-content" class="row col-12 justify-content-end" style="padding-bottom: 25px;">
+                                <div id="content-post-content-picture" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 25px;">
+                                    <img src={{post.cover}} style="width: 100%; float: right; margin-right: 10px;">
+                                </div>
+                                <div id="content-post-content-parag" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 25px;">
+                                    <p id="content-post-content-parag-p" style="margin-right: 15px; text-align: justify;">
+                                        {{post.title}}
+                                    </p>
+                                </div>
+                                <button id="content-post-content-parag-button" class="btn btn-light parag-button">
+                                    مشاهده
+                                </button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
                 </div>
                 <!--posts-->
 
