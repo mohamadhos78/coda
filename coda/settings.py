@@ -26,7 +26,7 @@ SECRET_KEY = 'vm-^c@39t68gd3ix=q4stw$)z0trflfbdjxxsq6^*mi9*j@(!@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []#"5.253.24.149","hicoda.ir","www.hicoda.ir"]
+ALLOWED_HOSTS = ["5.253.24.149","hicoda.ir","www.hicoda.ir"]
 
 
 # Application definition
@@ -126,16 +126,16 @@ SESSION_COOKIE_SECURE = True
 #____________________________________#
 #online
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-# STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
 
 #____________________________________#
 #offline
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-   os.path.join(BASE_DIR, "static"),
-]
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_URL = '/static/'
+# STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, "static"),
+# ]
 #____________________________________#
 # CDEditor
 CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
