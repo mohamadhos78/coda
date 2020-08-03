@@ -76,10 +76,10 @@ class index(TemplateView):
         'instagram':a.social_media.instagram ,
         })  
     def get(self, request, **kwargs):
-        
+        form = emailservice()
         context ={
             'users':self.users ,
-            'posts':self.posts ,
+            # 'posts':self.posts ,
             'main':self.mains[0] ,
             'form': form ,
         }
@@ -95,7 +95,7 @@ class index(TemplateView):
         form = emailservice()
         context ={
             'users':self.users ,
-            'posts':self.posts ,
+            # 'posts':self.posts ,
             'main':self.mains[0] ,
             'form': form
         }
@@ -185,6 +185,7 @@ class blog(TemplateView):
             'main':self.mains[0] ,
             'form': form ,
             'results':self.results ,
+            'posts' :self.posts ,
         }
         return render(request,"blog.htm", context)
     def post(self, request, **kwargs):
@@ -199,5 +200,6 @@ class blog(TemplateView):
             'main':self.mains[0] ,
             'form': form ,
             'results':self.results ,
+            'posts' :self.posts ,
         }
         return render(request,"blog.htm", context)

@@ -61,12 +61,12 @@ class adminProfile(models.Model):
         return self.user.first_name + " " + self.user.last_name
 
 class social_media(models.Model):
-    github    = models.URLField(max_length= 512 ,null=True,blank=True)
-    linkedin  = models.URLField(max_length= 512 ,null=True,blank=True)
-    telegram  = models.URLField(max_length= 512 ,null=True,blank=True)
-    instagram = models.URLField(max_length= 512 ,null=True,blank=True)
-    twitter   = models.URLField(max_length= 512 ,null=True,blank=True)
-    bale      = models.URLField(max_length= 512 ,null=True,blank=True)
+    github    = models.CharField(max_length= 512 ,null=True,blank=True)
+    linkedin  = models.CharField(max_length= 512 ,null=True,blank=True)
+    telegram  = models.CharField(max_length= 512 ,null=True,blank=True)
+    instagram = models.CharField(max_length= 512 ,null=True,blank=True)
+    twitter   = models.CharField(max_length= 512 ,null=True,blank=True)
+    bale      = models.CharField(max_length= 512 ,null=True,blank=True)
     
 class main(models.Model):
     logo = models.FileField(upload_to='main/',null=False,blank=False)
