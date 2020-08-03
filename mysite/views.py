@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 from .models import *
 from .forms import emailservice ,centure_form
+from django.db.models import Q #for searching in blog
 
 
 class contact_us(TemplateView):
@@ -51,9 +52,7 @@ class contact_us(TemplateView):
 class index(TemplateView):
     mains = []
     users = []
-    posts = []
     user_query = adminProfile.objects.all()
-    post_query = Article.objects.filter(promote=True)
     main_query = main.objects.all()
     for c in main_query:
         mains.append({
@@ -75,20 +74,12 @@ class index(TemplateView):
         'telegram':a.social_media.telegram ,
         'bale':a.social_media.bale ,
         'instagram':a.social_media.instagram ,
-        })
-    for b in post_query:
-        posts.append({
-        'author':b.author ,
-        'cover':b.cover.url ,
-        'content':b.content , 
-        'category':b.category,
-        'title':b.title ,
-        })     
-    def get(self, request, **kwargs):  
+        })  
+    def get(self, request, **kwargs):
         form = emailservice()
         context ={
             'users':self.users ,
-            'posts':self.posts ,
+            # 'posts':self.posts ,
             'main':self.mains[0] ,
             'form': form ,
         }
@@ -104,7 +95,7 @@ class index(TemplateView):
         form = emailservice()
         context ={
             'users':self.users ,
-            'posts':self.posts ,
+            # 'posts':self.posts ,
             'main':self.mains[0] ,
             'form': form
         }
@@ -160,6 +151,8 @@ class portfolio(TemplateView):
 
 class blog(TemplateView):
     mains = []
+    posts = []
+    post_query = Article.objects.all()
     main_query = main.objects.all()
     for c in main_query:
         mains.append({
@@ -169,11 +162,36 @@ class blog(TemplateView):
             'field3':c.field3 ,
             'field4':c.field4 ,
         })
+    for b in post_query:
+        posts.append({
+        'author':b.author ,
+        'cover':b.cover.url ,
+        'content':b.content , 
+        'category':b.category,
+        'title':b.title ,
+        })
     def get(self, request, **kwargs):
+        query = request.GET.get('q','')  
+        form = emailservice()
+        #you say that you working on a global result
+        if query:
+            queryset = Q(title__icontains=query) | Q(content__icontains=query)
+            #include searched data in title or content
+            self.post_query = Article.objects.filter(queryset).distinct()
+            #distinct remove duplicate search results
+            for b in post_query:
+                posts.append({
+                    'author':b.author  ,
+                    'cover' :b.cover.url , 
+                    'content' :b.content ,
+                    'category' :b.category ,
+                    'title' :b.title ,
+                })
         form = emailservice()
         context = {
             'main':self.mains[0] ,
             'form': form ,
+            'posts' :self.posts ,
         }
         return render(request,"blog.htm", context)
     def post(self, request, **kwargs):
@@ -186,6 +204,7 @@ class blog(TemplateView):
         form = emailservice()
         context ={
             'main':self.mains[0] ,
-            'form': form
+            'form': form ,
+            'posts' :self.posts ,
         }
         return render(request,"blog.htm", context)

@@ -49,6 +49,10 @@ class contact_us(models.Model):
 
     def __str__(self):
         return self.name
+        
+    class Meta:
+        verbose_name = 'contact_us'
+        verbose_name_plural = 'contact_us'
 
 class adminProfile(models.Model):
     social_media = models.OneToOneField('social_media', on_delete=models.CASCADE)
@@ -59,20 +63,22 @@ class adminProfile(models.Model):
 
     def __str__(self):
         return self.user.first_name + " " + self.user.last_name
+
 class social_media(models.Model):
-    github    = models.URLField(max_length= 512 ,null=True,blank=True)
-    linkedin  = models.URLField(max_length= 512 ,null=True,blank=True)
-    telegram  = models.URLField(max_length= 512 ,null=True,blank=True)
-    instagram = models.URLField(max_length= 512 ,null=True,blank=True)
-    twitter   = models.URLField(max_length= 512 ,null=True,blank=True)
-    bale      = models.URLField(max_length= 512 ,null=True,blank=True)
+    github    = models.CharField(max_length= 512 ,null=True,blank=True)
+    linkedin  = models.CharField(max_length= 512 ,null=True,blank=True)
+    telegram  = models.CharField(max_length= 512 ,null=True,blank=True)
+    instagram = models.CharField(max_length= 512 ,null=True,blank=True)
+    twitter   = models.CharField(max_length= 512 ,null=True,blank=True)
+    bale      = models.CharField(max_length= 512 ,null=True,blank=True)
+
     
 class main(models.Model):
     logo = models.FileField(upload_to='main/',null=False,blank=False)
-    field1= models.URLField(max_length = 64,null=False ,blank=False)
-    field2= models.URLField(max_length = 64,null=False ,blank=False)
-    field3= models.URLField(max_length = 64,null=False ,blank=False)
-    field4= models.URLField(max_length = 64,null=False ,blank=False)
+    field2= models.CharField(max_length = 64,null=False ,blank=False)
+    field1= models.CharField(max_length = 64,null=False ,blank=False)
+    field3= models.CharField(max_length = 64,null=False ,blank=False)
+    field4= models.CharField(max_length = 64,null=False ,blank=False)
     class Meta:
         verbose_name = 'navbar'
         verbose_name_plural = 'navbars'
