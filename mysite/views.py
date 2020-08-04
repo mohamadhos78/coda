@@ -156,7 +156,6 @@ class blog(TemplateView):
     #for searching in blog
     mains = []
     posts = []
-    results =[]
     post_query = Article.objects.all()
     main_query = main.objects.all()
     for c in main_query:
@@ -167,13 +166,13 @@ class blog(TemplateView):
             'field3':c.field3 ,
             'field4':c.field4 ,
         })
-    for b in post_query:
+    for post in post_query:
         posts.append({
-        'author':b.author ,
-        'cover':b.cover.url ,
-        'content':b.content[:256]+"..." , #just shows the 256 character 
-        'category':b.category,
-        'title':b.title ,
+        'author'  :post.author ,
+        'cover'   :post.cover.url ,
+        'content' :post.content[:256]+"..." , #just shows the 256 character 
+        'category':post.category,
+        'title'   :post.title ,
         })
     def get(self, request, **kwargs):
         results =[]
@@ -181,27 +180,27 @@ class blog(TemplateView):
         form = emailservice()
         #you say that you working on a global result
         if query:
-            self.results = []
+            results = []
             queryset = self.Q(title__icontains=query) | self.Q(content__contains=query)
             #include searched data in title or content
             result_query = self.Article.objects.filter(queryset).distinct()
             #distinct remove duplicate search results
             for result in result_query:
-                self.results.append({
+                results.append({
                     'author'   :result.author  ,
                     'cover'    :result.cover.url , 
-                    'content'  :result.content ,
+                    'content'  :result.content[:256]+"..." , #just shows the 256 character 
                     'category' :result.category ,
                     'title'    :result.title ,
                 })
         else:
-            self.results = []
+            results = []
         form = emailservice()
         context = {
             'main':self.mains[0] ,
             'form': form ,
             'posts' :self.posts ,
-            'results' :self.results ,
+            'results' :results ,
             'query':query,
         }
         return render(request,"blog.htm", context)
