@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from .models import *
-from .forms import emailservice ,centure_form
-from django.db.models import Q #for searching in blog
+from .models import main ,adminProfile
+from .forms import emailservice
+
 
 
 class contact_us(TemplateView):
+    from .forms import centure_form
     mains=[]
     main_query = main.objects.all()
     for c in main_query:
@@ -150,8 +151,10 @@ class portfolio(TemplateView):
         return render(request,"portfolio.htm", context)
 
 class blog(TemplateView):
+    from django.db.models import Q
+    from .models import Article
+    #for searching in blog
     mains = []
-    query=None
     posts = []
     results =[]
     post_query = Article.objects.all()
@@ -168,20 +171,20 @@ class blog(TemplateView):
         posts.append({
         'author':b.author ,
         'cover':b.cover.url ,
-        'content':b.content[:256]+"..." , 
+        'content':b.content[:256]+"..." , #just shows the 256 character 
         'category':b.category,
         'title':b.title ,
         })
     def get(self, request, **kwargs):
-        self.query = request.GET.get('q')
+        results =[]
+        query = request.GET.get('q')
         form = emailservice()
         #you say that you working on a global result
-        if self.query:
+        if query:
             self.results = []
-            queryset = Q(title__icontains=self.query) | Q(content__contains=self.query)
-            print(type(self.query) )
+            queryset = self.Q(title__icontains=query) | self.Q(content__contains=query)
             #include searched data in title or content
-            result_query = Article.objects.filter(queryset).distinct()
+            result_query = self.Article.objects.filter(queryset).distinct()
             #distinct remove duplicate search results
             for result in result_query:
                 self.results.append({
@@ -199,7 +202,7 @@ class blog(TemplateView):
             'form': form ,
             'posts' :self.posts ,
             'results' :self.results ,
-            'query':self.query,
+            'query':query,
         }
         return render(request,"blog.htm", context)
     def post(self, request, **kwargs):
@@ -214,6 +217,5 @@ class blog(TemplateView):
             'main':self.mains[0] ,
             'form': form ,
             'posts' :self.posts ,
-            'query':self.query,
         }
         return render(request,"blog.htm", context)
