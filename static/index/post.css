@@ -1,0 +1,560 @@
+/* Font-face configuration */
+@font-face {
+    font-family: 'Yekan-N';
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan.woff') format('woff'),
+        url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Yekan-B';
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan-Bold.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan-Bold.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan-Bold.woff') format('woff'),
+        url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+/* Font-face configuration */
+
+html{
+    scroll-behavior: smooth;
+}
+
+/****************** Main ******************/
+#Main{
+    transition: background-color .5s;
+    transition: margin-left .5s;
+}
+
+#main{
+    font-family: Yekan-N;
+    background-image: url('Dependencies/Images/Back/Landing - 768.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    transition: opacity .5s;
+    opacity: 0;
+}
+
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    width: 50%px;
+}
+/****************** Main ******************/
+
+/**************** navbar ****************/
+#navbar{
+    height: 70px;
+    transition: ease-in-out 0.3s;
+    background-color: white;
+    box-shadow: 0 5px 10px rgb(243, 243, 243);
+}
+
+#navbar-scroll{
+    height: 75px;
+    z-index: 2;
+    transition: ease-in-out 0.3s;
+    top: -75px;
+    background-color: rgba(46, 46, 46, 0.835);
+    border-radius: 0 0 10px 10px;
+    backdrop-filter: blur(4px);
+}
+
+#navbar-right{
+    background-color: white;
+    box-shadow: 5px black;
+}
+
+#navbar-right-row{
+    margin-top: 10px;
+}
+
+#navbar-right-logo{
+    
+}
+
+#navbar-right-logo-img{
+    width: 88px;
+}
+
+#navbar-right-blog{
+    
+}
+
+#navbar-right-blog-h6{
+    text-align: center;
+}
+
+#navbar-right-contact{
+    
+}
+
+#navbar-right-contact-h6{
+    text-align: center;
+}
+
+#navbar-left{
+    background-color: white;
+    box-shadow: 5px black;
+}
+
+#nevbar-left-row{
+    margin-top: 18px;
+}
+
+#navbar-left-cost{
+
+}
+
+#navbar-left-cost-h6{
+    text-align: center;
+}
+
+#navbar-left-portfolio{
+
+}
+
+#navbar-left-portfolio-h6{
+    text-align: center;
+}
+
+#navbar-left-sign{
+    text-align: center;
+}
+
+#navbar-left-sign-button{
+    width: 120px;
+    height: 38px;
+    border-radius: 50px;
+}
+
+#navbar-left-sign-button-h6{
+    font-size: 11px;
+    font-family: Yekan-B;
+    float: right;
+    margin: 6px 5px 0 0;
+    color: white;
+}
+
+#navbar-left-sign-button-img{
+    width: 12px;
+    margin: -2px 4px 0 0;
+}
+
+#navbar-left-hamburger{
+    
+}
+
+#navbar-left-hamburger-img{
+    width: 25px;
+    float: left;
+}
+
+.button{
+    background-color: orangered;
+    border-width: 0;
+    transition: 0.2s ease-in-out;
+}
+
+.button:hover{
+    background-color: rgb(226, 60, 0);
+    border-width: 1;
+    border-color: white;
+    transition: 0.2s ease-in-out;
+}
+/**************** navbar ****************/
+
+
+/**************** navbar-modal ****************/
+#navbar-modal{
+    backdrop-filter: blur(4px);
+}
+
+#navbar-modal-close{
+    margin-bottom: -5px;
+}
+
+#navbar-modal-content{
+    width: 410px;
+    height: 450px;
+    border-radius: 25px;
+    margin-top: 60px;
+}
+
+#navbar-modal-title{
+    margin-bottom: 30px;
+    
+}
+
+#navbar-modal-title-h3{
+    font-size: 30px;
+    color: black;
+}
+
+#navbar-modal-caption-h4{
+    font-size: 12px;
+    color: black;
+}
+
+#navbar-modal-caption{
+    margin-top: 15px;
+}
+
+#navbar-modal-sign{
+    
+}
+
+#navbar-modal-form-input1{
+    width: 290px;
+    height: 50px;
+    border-radius: 50px;
+    border-width: 1px;
+    border-color: orangered;
+    background-color: rgba(255, 167, 136, 0.137);
+}
+
+#navbar-modal-form-input2{
+    width: 290px;
+    height: 50px;
+    border-radius: 50px;
+    border-width: 1px;
+    border-color: orangered;
+    background-color: rgba(255, 167, 136, 0.137);
+    margin-top: 10px;
+}
+
+#navbar-modal-form-input3{
+    width: 290px;
+    height: 50px;
+    border-radius: 50px;
+    border-width: 1px;
+    border-color: orangered;
+    background-color: rgba(255, 167, 136, 0.137);
+    margin-top: 10px;
+}
+
+#navbar-modal-form-button{
+    display: inline;
+    width: 44px;
+    height: 44px;
+    border-radius: 50px;
+    background-image: url('Dependencies/Images/Navbar/Button/ButtonIcon.png');
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-size: 35%;
+    margin: 13px -47px 0 0;
+}
+
+#navbar-modal-social{
+    margin-top: 15px;
+}
+
+#navbar-modal-social-1{
+    display: inline;
+    width: 23px;
+    height: 23px;
+    border-radius: 50px;
+    border-width: 0px;
+    background-color:rgb(39, 204, 121);
+    border-color: rgb(39, 204, 121);
+    margin: 2px;
+}
+
+#navbar-modal-social-2{
+    display: inline;
+    width: 23px;
+    height: 23px;
+    border-radius: 50px;
+    border-width: 0px;
+    background-color:rgb(39, 204, 121);
+    border-color: rgb(39, 204, 121);
+    margin: 2px;
+}
+
+#navbar-modal-social-3{
+    display: inline;
+    width: 23px;
+    height: 23px;
+    border-radius: 50px;
+    border-width: 0px;
+    background-color:rgb(39, 204, 121);
+    border-color: rgb(39, 204, 121);
+    margin: 2px;
+}
+
+#navbar-modal-social-4{
+    display: inline;
+    width: 23px;
+    height: 23px;
+    border-radius: 50px;
+    border-width: 0px;
+    background-color:rgb(39, 204, 121);
+    border-color: rgb(39, 204, 121);
+    margin: 2px;
+}
+
+.button1{
+    background-color: orangered;
+    border-width: 0;
+    transition: 0.2s ease-in-out;
+}
+
+.button1:hover{
+    background-color: rgb(221, 59, 0);
+    border-width: 1;
+    border-color: white;
+    transition: 0.5s ease-in-out;
+}
+/**************** navbar-modal ****************/
+
+
+/**************** hamburger-menu ****************/
+#side-nav-close{
+    margin: -30px 20px 0 0;
+}
+
+#side-nav-1-title{
+    font-size: 46px;
+    margin-top: 35px;
+}
+
+#side-nav-1-caption{
+    margin: 5px 55px 0 20px;
+    line-height: 22px;
+}
+
+#side-nav-1-social{
+    margin-top: 60px;
+}
+
+#side-nav-2{
+    margin: 40px 15px 0 15px;
+}
+
+.social-icon{
+    width: 45px;
+    height: 45px;
+    background-color: orangered;
+    opacity: 60%;
+    border-width: 0;
+    margin: 10px;
+    border-radius: 20px;
+    transition: 0.8s ease;
+}
+
+.social-icon:hover{
+    opacity: 90%;
+    transition: 0.8s ease;
+    cursor: pointer;
+}
+
+.nav-item{
+    width: 120px;
+    height: 60px;
+    background-color: rgba(255, 68, 0, 0.226);
+    border-width: 1px;
+    border-color: orangered;
+    margin: 10px;
+    border-radius: 20px;
+    transition: 0.4s ease;
+    color: black;
+    
+}
+
+.nav-item:hover{
+    background-color: orangered;
+    transition: 0.3s ease;
+    color: white;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    border-radius: 0 20px 20px 0;
+    border-color: rgba(255, 68, 0, 0.198);
+    border-style: solid;
+    border-width: 0px 2px 0px 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    backdrop-filter: blur(5px);
+  }
+
+#side-nav-logo-img{
+    width: 88px;
+}
+/**************** hamburger-menu ****************/
+
+/*************** H's Right-Align ****************/
+h1{
+    text-align: right;
+}
+
+h2{
+    text-align: right;
+}
+
+h3{
+    text-align: right;
+}
+
+h4{
+    text-align: right;
+}
+
+h5{
+    text-align: right;
+}
+
+h6{
+    text-align: right;
+}
+
+p{
+    text-align: right;
+}
+/*************** H's Right-Align ****************/
+
+/* footer */
+#footer-back{
+    background-color: rgb(14, 14, 14);
+    color: white;
+    margin-top: 50px;
+    border-radius: 20px 20px 0 0;
+    height: 60px;
+    width: 430px;
+}
+
+#footer-caption{
+    text-align: center;
+    font-size: 15px;
+    margin-top: 15px;
+}
+/* footer */
+
+/* scroll icon*/
+.scroll-downs {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    
+    width :34px;
+    height: 55px;
+  }
+  .mousey {
+    width: 3px;
+    padding: 10px 15px;
+    height: 35px;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    opacity: 0.75;
+    box-sizing: content-box;
+  }
+  .scroller {
+    width: 3px;
+    height: 10px;
+    border-radius: 25%;
+    background-color: #fff;
+    animation-name: scroll;
+    animation-duration: 2.2s;
+    animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+    animation-iteration-count: infinite;
+  }
+  @keyframes scroll {
+    0% { opacity: 0; }
+    10% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(15px); opacity: 0;}
+  }
+  /* scroll icon*/
+
+  /* social-bar */
+#social-bar{
+    width: 45px;
+    height: 205px;
+    border-radius: 0 15px 15px 0;
+    z-index: 2;
+    background-color: rgba(46, 46, 46, 0.157);
+    left: 0;
+    top: 30%;
+    backdrop-filter: blur(5px);
+    margin-left: -35px;
+    transition: ease-in-out 0.2s;
+}
+
+#social-bar:hover{
+    margin-left: 0;
+    transition: ease-in-out 0.2s;
+    background-color: rgb(238, 242, 255);
+}
+
+.social-bar-icon{
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    margin: 10px 0 5px 4px;
+    opacity: 50%;
+    transition: ease-in-out 0.3s;
+}
+
+.social-bar-icon:hover{
+    opacity: 100%;
+    transition: ease-in-out 0.3s;
+}
+  /* social-bar */
+
+.tag-button{
+    background-color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #00E25A;
+    height: 35px;
+    border-radius: 10px;
+    transition: 0.2s ease-in-out;
+}
+
+.tag-button:hover{
+    background-color: rgb(252, 255, 247);
+    border-width: 1px;
+    border-style: solid;
+    border-color: #00c34e;
+    transition: 0.2s ease-in-out;
+}
+
+.parag-button{
+    background-color: #00E25A;
+    border-width: 0;
+    width: 90px;
+    height: 40px;
+    border-radius: 10px;
+    transition: 0.2s ease-in-out;
+    color: white;
+}
+
+.parag-button:hover{
+    width: 90px;
+    background-color: #30e478;
+    border-width: 0;
+    transition: 0.2s ease-in-out;
+    color: white;
+}
+
+#search-field{
+    width: 290px;
+    height: 50px;
+    border-radius: 50px;
+    border-width: 1px;
+    border-color: white;
+    background-color: rgba(255, 254, 254, 0.842);
+    margin-top: 10px;
+}
