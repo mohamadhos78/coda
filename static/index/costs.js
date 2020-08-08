@@ -53,6 +53,7 @@ else {
 
 
 
+
 /**************** fix-width ****************/
 function resize() {
 if ( $(window).width() > 1370) {     
@@ -106,3 +107,6 @@ function acardeon3() {
   $("#text1").addClass('d-none');
   $("#text3").removeClass('d-none');
 }
+
+////////
+

@@ -484,11 +484,16 @@ h6{
 }
 /*************** H's Right-Align ****************/
 /*************** cost calaculate ****************/
+#calculate{
+    background-color: #31313109;
+    margin-top: 3em;
+
+
+}
 #div-calculate{
     margin-top: 2em;
-    background-color: lavender;
-    padding-right: 6em;
-    padding-left: 6em;
+    padding-right: 3.67em;
+    padding-left: 3.67em;
 }
 #h1title-costonline{
     text-align: center;
@@ -498,7 +503,6 @@ h6{
 }
 #typenumber-site{
     margin-top: 2em;
-    padding-right: ;
 }
 
 #div-typesite{
@@ -506,12 +510,72 @@ h6{
 }
 #type-site{
     padding-top: 3em;
-    padding-right: ;
 
 }
+input[id=company] {
+    width: 120px;
+    height: 47px;
+    margin: 0px 0px 0px -30px;
+    background-color: #FF4803;
+    border: #FF4803;
+    color: whitesmoke;
+    z-index: 2;
+    border-radius: 50px;
+    font-size: 15px;
+  }
+  input[id=company]:focus {
+    border: #FF4803;
+    background-color: #FF4803;
+  }
+  input[id=company]:hover{
+      background-color: #d33800;
+      color: whitesmoke;
+  }
+
+
+  input[id=stores] {
+    width: 120px;
+    height: 47px;
+    margin: 0px 0px 0px 0px;
+    background-color: #313131;
+    border: #313131;
+    color: whitesmoke;
+    z-index: 1;
+    border-radius: 50px;
+    font-size: 15px;
+  }
+  input[id=stores]:focus {
+    border: #313131;
+  }
+  input[id=stores]:hover{
+      background-color: #272727;
+      color: whitesmoke;
+  }
+
+
+  input[id=special] {
+    width: 120px;
+    height: 47px;
+    margin: 0px -30px 0px 0px;
+    background-color: #36E17A;
+    border: #36E17A;
+    color: whitesmoke;
+    z-index: 0;
+    border-radius: 50px;
+    font-size: 15px;
+  }
+  input[id=special]:focus {
+    border: #36E17A;
+  }
+  input[id=special]:hover{
+      background-color: #1eac57;
+      color: whitesmoke;
+  }
+
+
 #h4title-type{
     text-align: center;
-    font-size: 30px;
+    font-size: 27.3px;
     font-weight: bold;
     margin-left: ;
 
@@ -520,58 +584,9 @@ h6{
     padding-top: 3em;
     padding-left: 2em;
 }
-/**type of site**/
-
-input[id=company] {
-    width: 125px;
-    height: 40px;
-    margin: 0px 0px 0px -30px;
-    background-color: orangered;
-    border: orangered;
-    color: whitesmoke;
-    z-index: 2;
-    border-radius: 20px;
-    font-size: 13px;
-  }
-  input[id=company]:focus {
-    border: orangered;
-    z-index: 3;
-    background-color: orangered;
-  }
 
 
-  input[id=stores] {
-    width: 125px;
-    height: 40px;
-    margin: 0px 0px 0px 0px;
-    background-color: black;
-    border: black;
-    color: whitesmoke;
-    z-index: 1;
-    border-radius: 20px;
-    font-size: 13px;
-  }
-  input[id=stores]:focus {
-    border: black;
-    z-index: 3;
-  }
 
-
-  input[id=special] {
-    width: 125px;
-    height: 40px;
-    margin: 0px -30px 0px 0px;
-    background-color: #00E25A;
-    border: #00E25A;
-    color: whitesmoke;
-    z-index: 0;
-    border-radius: 20px;
-    font-size: 13px;
-  }
-  input[id=special]:focus {
-    border: #00E25A;
-    z-index: 3;
-  }
   #h4title-number{
     text-align: center;
     font-size: 25px;
@@ -579,18 +594,21 @@ input[id=company] {
     margin-left: 10px;
   }
   #sellecnumber{
-      border-radius: 20px;
+      border-radius: 25px;
+      background-color: #ccc;
+      text-align: end;
   }
   select.form-control {
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
     background-origin: content-box;
-    border-radius: 25px;
-    height: 3em;
-    width: 4em;
-    margin-bottom:;
-    font-size: 20px;
+    text-align: center;
+    width: 75px;
+    height: 47px;
+}
+#textnumber-select{
+    padding-right: 50px;
 }
 
 /**css range slider**/
@@ -601,12 +619,16 @@ input[id=company] {
 #range{
     padding-top: 1em;
 }
+#textrange{
+    padding-left: 70px;
+
+}
 #text-range{
     text-align: center;
-    font-size: 30px;
+    font-size: 27.3px;
     font-weight: bold;
     margin-left: 10px;
-    padding-right: 0;
+
   }
   #text-megabyte{
     text-align: bottom;
@@ -647,11 +669,11 @@ input[id=company] {
     -webkit-appearance: none;
   }
 #accessories{
-    padding-top: 3em;
-    padding-right: 3em;
+    padding-top: 4em;
+    padding-right: 3.2em;
 }
 #title-checkbox{
-    font-size: 30px;
+    font-size: 27.5px;
     font-weight: bold;
 }
 .container {
@@ -671,7 +693,7 @@ input[id=company] {
   /* Hide the browser's default checkbox */
   input[type='checkbox'] {
     position: absolute;
-    opacity: 0;
+    opacity: 100;
     cursor: pointer;
     height: 0;
     width: 0;
@@ -685,20 +707,17 @@ input[id=company] {
     height: 25px;
     width: 25px;
     background-color: #eee;
-    border: solid orangered;
-    border: 10px;
+    border: solid orangered 3px;
     border-radius: 15px;
   }
   
   /* On mouse-over, add a grey background color */
-  .container:hover input ~ .checkmark {
-    background-color: #ccc;
-    border: solid orangered;
-  }
   
-  /* When the checkbox is checked, add a blue background */
+  
+  /* When the checkbox is checked, add a background */
   .container input:checked ~ .checkmark {
     background-color: #eee;
+    border: solid orangered;
   }
   
   /* Create the checkmark/indicator (hidden when not checked) */
@@ -726,6 +745,71 @@ input[id=company] {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
   }
+
+
+  /*botton out*/
+  #cost{
+      padding-top: 2em;
+  }
+  #btn-out{
+      font-size: 35px;
+  }
+  .button {
+    width: 250px;
+    height: 70px;
+    padding-top: 8px;
+    padding-bottom: 0px;
+    text-align: center;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  .button-1 {
+    background-color: transparent;
+    border: 3px solid orangered;
+    border-radius: 50px;
+    -webkit-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+    color: orangered;
+  }
+  .button-1:hover {
+    box-shadow: 0 0 10px 0 orangered, 0 0 20px 2px red;
+    border: 3px solid orangered;
+  }
+  #cost-out{
+      font-size: 65px;
+      padding-left: 0.9em;
+      font-weight: 600;
+      padding-top: 0.1em;
+  }
+  #text-out{
+      padding-left: 1em;
+  }
+  #total-text{
+      font-size: 40px;
+      padding-top: 0.5em;
+      padding-right: 1em;
+      font-weight: 600;
+  }
+  #total-text2{
+    font-weight: 200;
+    padding-top: 1.7em;
+    padding-right: 0.2em;
+
+  }
+  #tooman{
+      padding-top: 2em;
+      padding-right: 1em;
+  }
+  
+  
+  
+  
 
   
 

@@ -408,87 +408,97 @@
             <!--acardeon-->
 
             <!--calculate-->
-            <div dir="rtl" id="div-calculate" class="row col-12 justify-content-center container d-none d-md-block">
-                <h1 id="h1title-costonline" class="row justify-content-center">محاسبه آنلاین هزینه</h1> 
-                <div id="typenumber-site" class="row justify-content-center">
-                    <div class="row justify-content-center col-xl-8 col-lg-8 col-md-12" id="type-site">
-                        <div class="row justify-content-center col-xl-3 col-lg-4">
-                            <h4 id="h4title-type" >نوع سایت</h4> 
-                        </div>
-                        <div class="row justify-content-center col-xl-7 col-lg-9" id="">
-                            <input id="company" class="btn btn-outline-light" type="button" value="شرکتی">
-                            <input id="stores" class="btn btn-outline-light" type="button" value="فروشگاهی">
-                            <input id="special" class="btn btn-outline-light" type="button" value="اختصاصی">
-                        </div>     
-                    </div>
-
-                    <div class="row justify-content-center col-xl-4 col-lg-4 col-md-12" id="number-damane">
-                        <div class="row justify-content-center col-xl-7 col-lg-9 col-md-7">
-                            <h4 id="h4title-number">تعداد دامنه</h4>
-                        </div>
-                        <div class="row justify-content-center col-xl-1 offset-xl-4 col-lg-1 offset-lg-1 col-md-5">
-                            <section class="container">
-                                <form style="margin-top: -15px;" class="form-horizontal">
-                                    <select class="form-control">
-                                        <option><h1>یک</h1></option>
-                                        <option><h1>دو</h1></option>
-                                        <option><h1>سه</h1></option>
-                                    </select>
-                                </form>
-                            </section>  
-                        </div>
-                    </div>
-                </div> 
-                <div id="rangeslider" class="row justify-content-center">
-                    <div id="textrange" class="row justify-content-center col-xl-5 col-lg-5 col-md-12">
-                        <h4 id="text-range"> میزان حافظه مورد نیاز</h4>
-                    </div>
-
-                    <div id="calhard" class="row justify-content-start col-xl-7 col-lg-7 col-md-12">
-
-                        <div id="range" class="row justify-content-center justify-content-md-center col-xl-8 col-lg-8 col-md-8">
-                            <input dir="ltr" id="myinput" type="range" min="0" value="1" max="10" step="1" list="tickmarks"/>
-                        </div>
-
-                        <div id="div-output" class="row justify-content-center col-xl-3 col-lg-4 col-md-3">
-                            <div id="output"></div>
+            <div id="calculate" class="row justify-content-center">
+                <div id="div-calculate" class="row col-11 justify-content-center d-none d-lg-block">
+                        <h1 id="h1title-costonline" class="row justify-content-center">محاسبه آنلاین هزینه</h1> 
+                        <div id="typenumber-site" class="row justify-content-center">
+                            <div id="type-site" class="row justify-content-center col-xl-8 col-lg-8 col-md-12">
+                                <div class="row justify-content-center align-self-center col-xl-3 col-lg-4">
+                                    <h4 id="h4title-type">نوع سایت</h4> 
+                                </div>
+                                <div class="row justify-content-center align-self-center col-xl-8 col-lg-8" id="">
+                                    <input id="company" class="btn btn-outline-light" type="button" value="شرکتی" onclick="company()">
+                                    <input id="stores" class="btn btn-outline-light" type="button" value="فروشگاهی" onclick="stores()">
+                                    <input id="special" class="btn btn-outline-light" type="button" value="اختصاصی" onclick="special()">
+                                </div>     
+                            </div>
+        
+                            <div class="row justify-content-center col-xl-4 col-lg-4 col-md-12" id="number-damane">
+                                <div class="row justify-content-center align-self-center col-xl-9 col-lg-10 col-md-7">
+                                    <h4 id="h4title-number">تعداد دامنه</h4>
+                                </div>
+                                <div class="row justify-content-center align-self-center col-xl-2 offset-xl-1 col-lg-2 col-md-4">
+                                    <section class="container">
+                                        <form class="form-horizontal">
+                                            <select id="sellecnumber" class="form-control">
+                                                <option value="1"><h2>یک</h2></option>
+                                                <option value="2"><h2>دو</h2></option>
+                                                <option value="3"><h2>سه</h2></option>
+                                            </select>
+                                        </form>
+                                    </section>  
+                                </div>
+                            </div>
+                        </div> 
+                        <div id="rangeslider" class="row justify-content-center align-self-center">
+                            <div id="textrange" class="row justify-content-center align-self-center col-xl-5 col-lg-5 col-md-12">
+                                <h4 id="text-range"> میزان حافظه مورد نیاز</h4>
+                            </div>
+        
+                            <div id="calhard" class="row justify-content-start col-xl-7 col-lg-7 col-md-12">
+        
+                                <div id="range" class="row justify-content-center align-self-center justify-content-md-end col-xl-8 col-lg-8 col-md-7">
+                                    <input dir="ltr" id="myinput" type="range" min="0" value="1" max="10" step="1" list="tickmarks"/>
+                                </div>
+        
+                                <div id="div-output" class="row justify-content-center align-self-center col-xl-3 col-lg-4 col-md-3">
+                                    <div id="output"></div>
+                                </div>
+                                
+                                <div id="div-text-megabyte" class="row justify-content-center align-self-center col-xl-1 col-lg-1 col-md-1">
+                                    <h4 id="text-megabyte"> مگابایت </h4>
+                                </div>
+        
+                            </div>
                         </div>
                         
-                        <div id="div-text-megabyte" class="row justify-content-center col-xl-1 col-lg-1 col-md-1">
-                            <h4 id="text-megabyte"> مگابایت </h4>
+        
+                        <div id="accessories" class="row justify-content-center align-self-center">
+                            <div class="row justify-content-start align-self-center col-xl-3 offset-xl-1 col-lg-4 col-md-4">
+                                <label class="container"><h4 id="title-checkbox"> صفحات اضافه</h4>
+                                    <input type="checkbox" id="add page">
+                                    <span class="checkmark"></span>
+                                </label>                              
+                            </div>
+                            <div class="row justify-content-center align-self-center col-xl-3 offset-xl-1 col-lg-4 col-md-4">
+                                <label class="container"><h4 id="title-checkbox"> درگاه پرداخت</h4>
+                                    <input type="checkbox" id="payment gateway">
+                                    <span class="checkmark"></span>
+                                </label>                                
+                            </div>
+                            <div class="row justify-content-end align-self-center col-xl-3 offset-xl-1 col-lg-4 col-md-4">
+                                <label class="container"><h4 id="title-checkbox"> اتصال امن</h4>
+                                    <input type="checkbox" id="safe connection">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
                         </div>
-
+    
+                    <div id="cost" class="row justify-content-center">
+                        <div>
+                            <div id="btn-out" onclick="cost()" class="button button-1 row">محاسبه</div>
+                        </div>   
                     </div>
-                </div>
-                
-
-                <div id="accessories" class="row justify-content-center">
-                    <div class="row justify-content-start col-3 offset-1">
-                        <label class="container"><h4 id="title-checkbox"> صفحات اضافه</h4>
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
+                    <div id="text-out" class="row justify-content-center">
+                        <div class="row justify-content-center col-xl-5 offset-xl-2 col-lg-5 offset-lg-1">
+                            <p id="total-text">مجموع هزینه</p><p id="total-text2">(تقریبی)</p>
+                        </div>                 
+                        <output class="row justify-content-center col-xl-4 col-lg-4 " id="cost-out">2021500
                         
-                    </div>
-                    <div class="row justify-content-center col-3 offset-1">
-                        <label class="container"><h4 id="title-checkbox"> درگاه پرداخت</h4>
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
-                        
-                    </div>
-                    <div class="row justify-content-end col-3 offset-1">
-                        <label class="container"><h4 id="title-checkbox"> اتصال امن</h4>
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-
-                </div>
-
-                <div id="cost" class="row justify-content-center">
-
-                </div>
+                        </output> 
+                          <div id="tooman" class="row justify-content-start col-xl-1 col-lg-2">تومان</div>
+                    </div>     
+            </div>
             </div>
             <!--calculate-->
 
