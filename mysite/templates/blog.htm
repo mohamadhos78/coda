@@ -298,9 +298,11 @@
                                         {{post.content}}
                                     </p>
                                 </div>
-                                <button id="content-post-content-parag-button" class="btn btn-light parag-button">
-                                    مشاهده
-                                </button>
+                                <a href={% url "posts" post.id %}>
+                                    <button id="content-post-content-parag-button" class="btn btn-light parag-button">
+                                        مشاهده
+                                    </button>
+                                </a>
                             </div>
                         </div>    
                     {% endfor %}
@@ -335,9 +337,11 @@
                                         {{post.content}}
                                     </p>
                                 </div>
-                                <button id="content-post-content-parag-button" class="btn btn-light parag-button">
-                                    مشاهده
-                                </button>
+                                <a href={% url "posts" post.id %}>
+                                    <button id="content-post-content-parag-button" class="btn btn-light parag-button">
+                                        مشاهده
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     {% endfor %}

@@ -168,11 +168,12 @@ class blog(TemplateView):
         })
     for post in post_query:
         posts.append({
-        'author'  :post.author ,
-        'cover'   :post.cover.url ,
-        'content' :post.content[:256]+"..." , #just shows the 256 character 
-        'category':post.category,
-        'title'   :post.title ,
+            'id'      :post.id ,
+            'author'  :post.author ,
+            'cover'   :post.cover.url ,
+            'content' :post.content[:256]+"..." , #just shows the 256 character 
+            'category':post.category,
+            'title'   :post.title ,
         })
     def get(self, request, **kwargs):
         results =[]
@@ -187,6 +188,7 @@ class blog(TemplateView):
             #distinct remove duplicate search results
             for result in result_query:
                 results.append({
+                    'id'       :result.id , 
                     'author'   :result.author  ,
                     'cover'    :result.cover.url , 
                     'content'  :result.content[:256]+"..." , #just shows the 256 character 
@@ -218,3 +220,39 @@ class blog(TemplateView):
             'posts' :self.posts ,
         }
         return render(request,"blog.htm", context)
+class posts(TemplateView):
+    from django.http import HttpResponse
+    from .models import Article
+    post = []
+    mains = []
+    main_query = main.objects.all()
+    for c in main_query:
+        mains.append({
+            'logo':c.logo.url ,
+            'field1':c.field1 ,
+            'field2':c.field2 ,
+            'field3':c.field3 ,
+            'field4':c.field4 ,
+        })
+    def get(self,request,pk):
+        try:
+            query = self.Article.objects.get(id=pk)
+        except:
+            return self.HttpResponse("404 \nSorry!NOT FOUND")
+        else:
+            self.post.append({
+                'id'         :query.id         , 
+                'author'     :query.author     ,
+                'avatar'     :query.author.avatar.url     ,
+                'cover'      :query.cover.url  , 
+                'content'    :query.content    ,
+                'category'   :query.category   ,
+                'title'      :query.title      ,
+                'created_at' :query.created_at ,  
+            })
+            context = {
+                'post' : self.post[0]  , 
+                # 'main' : self.mains[0] ,
+            }
+            return render(request , "post.htm" , context)
+        

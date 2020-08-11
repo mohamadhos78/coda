@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+{% load static %}
 <html dir="rtl">
 
     <head>
@@ -49,7 +49,7 @@
             <a href="www.bale.com/hicoda.ir">
                 <img id="social-bar-3" class="social-bar-icon" src={% static "index/Dependencies/Images/social/bale.png" %}>
             </a>
-            <a href="www.hithub.com/hicoda.ir">
+            <a href="www.github.com/hicoda.ir">
                 <img id="social-bar-4" class="social-bar-icon" src={% static "index/Dependencies/Images/social/github.png" %}>
             </a>
         </div>
@@ -103,11 +103,11 @@
                                 <h6 id="navbar-left-sign-button-h6">
                                     مشترک شو
                                 </h6>
-                                <img id="navbar-left-sign-button-img" src={% static "index/Dependencies/Images/Navbar/Sign Icon.png" %}/>
+                                <img id="navbar-left-sign-button-img" src={% static "index/Dependencies/Images/Navbar/person/Sign Icon.png" %}>
                             </button>
                         </div>
                         <div id="navbar-left-hamburger" class="col-xl-1 col-lg-1 col-md-1 col-sm-2 col-xs-1 d-flex justify-content-center align-self-center">
-                            <img id="navbar-left-hamburger-img" type="button" onclick="openNav()" src={% static "index/Dependencies/Images/Navbar/Left Menu Icon.png" %}/>
+                            <img id="navbar-left-hamburger-img" type="button" onclick="openNav()" src={% static "index/Dependencies/Images/Navbar/LeftMenuIcon.png" %}>
                         </div>
                     </div>
                 </div>
@@ -120,7 +120,7 @@
                     <div id="navbar-right-row" class="row d-flex justify-content-center">    
                         <div id="navbar-right-logo" class="col-xl-5 col-lg-3 col-md-3 col-sm-3 col-xs-3 d-flex justify-content-center align-self-center">
                             <a href="#">
-                                <img id="navbar-right-logo-img" src={% static "index/Dependencies/Images/Logo/logo.png" %}/>
+                                <img id="navbar-right-logo-img" src="{% static "index/Dependencies/Images/Logo/logo.png" %}">
                             </a>
                         </div>
                         <div id="navbar-right-blog" class="col-xl-2 col-lg-2 d-none d-lg-block justify-content-center align-self-end">
@@ -161,11 +161,11 @@
                                 <h6 id="navbar-left-sign-button-h6">
                                     مشترک شو
                                 </h6>
-                                <img id="navbar-left-sign-button-img" src="Dependencies/Images/Header/SignIcon.png"/>
+                                <img id="navbar-left-sign-button-img" src="{% static "index/Dependencies/Images/Header/SignIcon.png" %}">
                             </button>
                         </div>
                         <div id="navbar-left-hamburger" class="col-xl-1 col-lg-1 col-md-1 col-sm-2 col-xs-1 d-flex justify-content-center align-self-center">
-                            <img id="navbar-left-hamburger-img" type="button" onclick="openNav()" src="Dependencies/Images/Header/LeftMenuIcon.png"/>
+                            <img id="navbar-left-hamburger-img" type="button" onclick="openNav()" src="{% static "index/Dependencies/Images/Header/LeftMenuIcon.png" %}">
                         </div>
                     </div>
                 </div>
@@ -219,7 +219,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <div id="side-nav-logo" class="col-12 d-flex justify-content-center align-self-center">
-                    <img id="side-nav-logo-img" src="Dependencies/Images/Logo/logo.png"/>
+                    <img id="side-nav-logo-img" src={%  static "index/Dependencies/Images/Logo/logo.png" %}>
                 </div>
                 <!--for large screens-->
                 <div id="side-nav-1" class="row d-none d-lg-block justify-content-center">
@@ -268,49 +268,30 @@
                     <!--post-->
                     <div id="content-posts" class="row col-12 justify-content-center" style="padding-top: 1px; margin: 0 0 40px 0; background-color: white; border-radius: 25px; box-shadow: 0 2px 10px rgb(226, 226, 226); height: 100%;">
                         <div id="content-post-content-picture" class="col-xl-12" style="margin: 35px 0 0px 0;">
-                            <img src={% static "index/Dependencies/Images/Path209.png" %} style="width: 100%;">
+                            <img src={{post.cover}} style="width: 100%;">
                         </div>
                         <div id="content-post-name" class="row col-12" style="margin: 40px 0 40px 0;">
                             <div id="content-post-name-title" class="row col-xl-6 col-lg-7 col-md-7 col-sm-12 col-xs-12">
-                                <img id="content-post-name-title-img" src={% static "index/Dependencies/Images/Ellipse 22.png" %} style="text-align: right; width: 30px; height: 30px; margin-left: 15px;"/>
+                                <img id="content-post-name-title-img" src={{post.avatar}} style="text-align: right; width: 30px; height: 30px; margin-left: 15px;">
                                 <h3 id="content-post-name-title-h4" style="margin-top: -3px;">
-                                    عنوان پست شماره یک
+                                    {{post.title}}
                                 </h3>
                             </div>
                             <div id="content-post-name-tag" class="row col-xl-6 col-lg-5 col-md-5 col-sm-12 col-xs-12 justify-content-end" style="margin-top: -5px;">
                                 <button id="content-post-name-tag-button" class="btn btn-light tag-button" style="margin: 5px 0 5px 10px;">
-                                    برچسب
-                                </button>
-                                <button id="content-post-name-tag-button" class="btn btn-light tag-button" style="margin: 5px 0 5px 10px;">
-                                    برچسب
-                                </button>
-                                <button id="content-post-name-tag-button" class="btn btn-light tag-button" style="margin: 5px 0 5px 10px;">
-                                    برچسب
+                                    {{post.category}}
                                 </button>
                             </div>
                             <div id="content-post-author" class="col-12 justify-content-center">
                                 <hr>
                                 <h6 id="content-post-author-h4" style="font-size: 15px; margin-top: -3px; color: rgb(109, 109, 109);">
-                                    نام نویسنده | تاریخ انتشار مطلب
+                                    {{post.author}} | {{post.created_at}}
                                 </h6>
                             </div>
                         </div>
                         <div id="content-post-content" class="row col-11 justify-content-center" style="padding-bottom: 25px;">
                             <p id="content-post-content-parag-p" style="text-align: justify; line-height: 30px;">
-                                این یک متن آزمایشی برای مشاهده ی توضیحات پست
-                                شماره یک است که به صورت آزمایشی در اینجا قرار داده شده و
-                                تغییرات مورد نیاز آن سنجیده می شود. خواهشمندیم به چیزی
-                                دست نزنید و آرام نشینید.این یک متن آزمایشی برای مشاهده 
-                                توضیحات پست  شماره یک است که به صورت آزمایشی در اینجا
-                                قرار داده شده و تغییرات مورد نیاز آن سنجیده می شود.
-                                خواهشمندیم به چیزی دست نزنید و آرام بنشینید.
-                                ین یک متن آزمایشی برای مشاهده ی توضیحات پست
-                                شماره یک است که به صورت آزمایشی در اینجا قرار داده شده و
-                                تغییرات مورد نیاز آن سنجیده می شود. خواهشمندیم به چیزی
-                                دست نزنید و آرام نشینید.این یک متن آزمایشی برای مشاهده 
-                                توضیحات پست  شماره یک است که به صورت آزمایشی در اینجا
-                                قرار داده شده و تغییرات مورد نیاز آن سنجیده می شود.
-                                خواهشمندیم به چیزی دست نزنید و آرام بنشینید.
+                                {{post.content}}
                             </p>
                         </div>
                         <div id="content-post-relatives" class="row col-12" style="margin: 50px 0 40px 0;">
