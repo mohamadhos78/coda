@@ -211,8 +211,6 @@ class blog(TemplateView):
         filled_form = emailservice(request.POST)
         if filled_form.is_valid():
             filled_form.save()
-        else:
-            form = emailservice()
         form = emailservice()
         context ={
             'main':self.mains[0] ,
@@ -223,7 +221,8 @@ class blog(TemplateView):
 class posts(TemplateView):
     from django.http import HttpResponse
     from .models import Article
-    post = []
+    form = emailservice()
+    result = []
     mains = []
     main_query = main.objects.all()
     for c in main_query:
@@ -240,7 +239,7 @@ class posts(TemplateView):
         except:
             return self.HttpResponse("404 \nSorry!NOT FOUND")
         else:
-            self.post.append({
+            self.result.append({
                 'id'         :query.id                    , 
                 'author'     :query.author                ,
                 'avatar'     :query.author.avatar.url     ,
@@ -251,9 +250,9 @@ class posts(TemplateView):
                 'created_at' :query.created_at            ,  
             })
             context = {
-                'post' :self.post[0]  , 
-                'main' :self.mains[0] ,
-                'form' :self.form     ,
+                'post' :self.result[0] , 
+                'main' :self.mains[0]  ,
+                'form' :self.form      ,
             }
             return render(request , "post.htm" , context)
     def post(self, request, **kwargs):
