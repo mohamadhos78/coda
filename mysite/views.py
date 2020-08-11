@@ -241,18 +241,28 @@ class posts(TemplateView):
             return self.HttpResponse("404 \nSorry!NOT FOUND")
         else:
             self.post.append({
-                'id'         :query.id         , 
-                'author'     :query.author     ,
+                'id'         :query.id                    , 
+                'author'     :query.author                ,
                 'avatar'     :query.author.avatar.url     ,
-                'cover'      :query.cover.url  , 
-                'content'    :query.content    ,
-                'category'   :query.category   ,
-                'title'      :query.title      ,
-                'created_at' :query.created_at ,  
+                'cover'      :query.cover.url             , 
+                'content'    :query.content               ,
+                'category'   :query.category              ,
+                'title'      :query.title                 ,
+                'created_at' :query.created_at            ,  
             })
             context = {
-                'post' : self.post[0]  , 
-                # 'main' : self.mains[0] ,
+                'post' :self.post[0]  , 
+                'main' :self.mains[0] ,
+                'form' :self.form     ,
             }
             return render(request , "post.htm" , context)
-        
+    def post(self, request, **kwargs):
+        filled_form = emailservice(request.POST)
+        if filled_form.is_valid():
+            filled_form.save()
+        context ={
+            'main' :self.mains[0] ,
+            'form' :self.form     ,
+            'post' :self.post[0]  , 
+        }
+        return render(request,"post.htm", context)
