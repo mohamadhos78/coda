@@ -305,6 +305,7 @@
                     <!--post-->
 
                     <!--comments-->
+                    {% for comment in comments %}
                     <div id="content-comments" class="row col-12 justify-content-center" style="padding-top: 1px; margin: 0 0 40px 0; background-color: white; border-radius: 25px; box-shadow: 0 2px 10px rgb(226, 226, 226); height: 100%;">
                         <div id="content-comments-title" class="col-11" style="margin: 50px 0 20px 0;">
                             <h5 style="text-align: right;">
@@ -327,21 +328,21 @@
                             <div id="content-comments-field-item" class="col-10" style="margin: 40px 0 50px 0; padding: 30px 30px 20px 20px; width: 100%; border-radius: 30px; border-style: solid; border-color: #a3a3a375; border-width: 1px;">
                                 <div id="content-comments-field-item-name" style="margin-bottom: 20px;">
                                     <h6>
-                                        محمدامین عزیزی
+                                        {{ comment.name }}
                                     </h6>
                                     <h6 class="col-10" style="color: rgb(107, 107, 107); font-size: 15px;">
-                                        تاریخ انتشار | ساعت انتشار
+                                        {{comment.date}}
                                     </h6>
                                 </div>
                                 <div id="content-comments-field-item-text" class="col-12">
                                     <h6 style="font-size: 15px; line-height: 25px;">
-                                        خیلی خوشحال شدم که تونستم از مطلب مفیدتون استفاده کنم. امیدوارم بازم ادامه پیدا کنه.
-                                        ما هم وبسایتی داریم که خوشحال میشیم ازش بازدید کنید.
+                                        {{comment.text}}
                                     </h6>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    {%endfor%}
                     <!--comments-->
                 </div>
                 <!--posts-->

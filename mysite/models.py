@@ -91,3 +91,13 @@ class centure(models.Model):
     centure_promote = models.BooleanField(default= False)
     def __str__(self):
         return self.centure_description
+
+
+class Comment(models.Model):
+    post = models.ForeignKey(Article , on_delete=models.CASCADE,related_name='comments')
+    name = models.CharField(max_length=32, null=False, blank=False)
+    email = models.EmailField(null=True)
+    date = models.DateField(auto_now_add=True)
+    text = models.TextField()
+    permission = models.BooleanField(default=False)
+

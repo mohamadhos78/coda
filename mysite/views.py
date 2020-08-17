@@ -213,11 +213,13 @@ class blog(TemplateView):
             filled_form.save()
         form = emailservice()
         context ={
-            'main':self.mains[0] ,
-            'form': form ,
-            'posts' :self.posts ,
+            'main': self.mains[0],
+            'form': form,
+            'posts': self.posts,
         }
-        return render(request,"blog.htm", context)
+        return render(request, "blog.htm", context)
+
+
 class posts(TemplateView):
     from django.http import HttpResponse
     from .models import Article
@@ -225,43 +227,55 @@ class posts(TemplateView):
     result = []
     mains = []
     main_query = main.objects.all()
+    comments = []
     for c in main_query:
         mains.append({
-            'logo':c.logo.url ,
-            'field1':c.field1 ,
-            'field2':c.field2 ,
-            'field3':c.field3 ,
-            'field4':c.field4 ,
+            'logo': c.logo.url,
+            'field1': c.field1,
+            'field2': c.field2,
+            'field3': c.field3,
+            'field4': c.field4,
         })
     def get(self,request,pk):
         try:
             query = self.Article.objects.get(id=pk)
-        except:
+            comment_query = query.comments.filter(permission=True)
+            new_comment = None
+        except ValueError:
             return self.HttpResponse("404 \nSorry!NOT FOUND")
         else:
+            for i in comment_query:
+                self.comments.append({
+                    'name': i.name,
+                    'date': i.date,
+                    'text': i.text,
+                })
+
             self.result.append({
-                'id'         :query.id                    , 
-                'author'     :query.author                ,
-                'avatar'     :query.author.avatar.url     ,
-                'cover'      :query.cover.url             , 
-                'content'    :query.content               ,
-                'category'   :query.category              ,
-                'title'      :query.title                 ,
-                'created_at' :query.created_at            ,  
+                'id': query.id,
+                'author': query.author,
+                'avatar': query.author.avatar.url,
+                'cover': query.cover.url,
+                'content': query.content,
+                'category': query.category,
+                'title': query.title,
+                'created_at': query.created_at,
             })
             context = {
-                'post' :self.result[0] , 
-                'main' :self.mains[0]  ,
-                'form' :self.form      ,
+                'post': self.result[0],
+                'main': self.mains[0],
+                'form': self.form,
+                'comments': self.comments,
             }
-            return render(request , "post.htm" , context)
-    def post(self, request, **kwargs):
+            return render(request, "post.htm", context)
+
+    def post(self, request):
         filled_form = emailservice(request.POST)
         if filled_form.is_valid():
             filled_form.save()
         context ={
-            'main' :self.mains[0] ,
-            'form' :self.form     ,
-            'post' :self.post[0]  , 
+            'main': self.mains[0],
+            'form': self.form,
+            'post': self.post[0],
         }
-        return render(request,"post.htm", context)
+        return render(request, "post.htm", context)
