@@ -100,4 +100,5 @@ class Comment(models.Model):
     date = models.DateField(auto_now_add=True)
     text = models.TextField()
     permission = models.BooleanField(default=False)
-
+    def __str__(self):
+        return "{}  by  {}".format(self.text,self.name)
