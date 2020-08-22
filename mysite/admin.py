@@ -31,5 +31,4 @@ admin.site.register(adminProfile , adminProfileAdmin)
 admin.site.register(main)
 
 admin.site.register(centure)
-
 admin.site.register(Comment)
