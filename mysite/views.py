@@ -280,7 +280,6 @@ def posts(request, pk):
         if comment.is_valid():
             new_comment = comment.save(commit=False)
             new_comment.post = query
-            print(new_comment)
             new_comment.save()
 
         context = {
@@ -288,6 +287,6 @@ def posts(request, pk):
             'comments': comments,
             'post': result,
             'form': form,
-            "comment": "comment",
+            "comment": comment,
         }
         return render(request, "post.htm", context)

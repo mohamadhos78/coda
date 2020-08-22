@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'vm-^c@39t68gd3ix=q4stw$)z0trflfbdjxxsq6^*mi9*j@(!@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["5.253.24.149","hicoda.ir","www.hicoda.ir"]
 
@@ -115,28 +115,28 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-#____________________________________#
-#Security
+# ____________________________________#
+# Security
 SECURE_SSL_HOST = True
 SESSION_COOKIE_SECURE = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 # Static Files
-#____________________________________#
-#online
+# ____________________________________#
+# online
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
-#____________________________________#
-#offline
-#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-#STATIC_URL = '/static/'
-#STATICFILES_DIRS = [
+# ____________________________________#
+# offline
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_URL = '/static/'
+# STATICFILES_DIRS = [
 #   os.path.join(BASE_DIR, "static"),
-#]
-#____________________________________#
+# ]
+# ____________________________________#
 # CDEditor
 CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
 CKEDITOR_UPLOAD_PATH = "uploads/"
