@@ -85,22 +85,21 @@ class main(models.Model):
 
 class centure(models.Model):
     centure_name = models.CharField(max_length=64)
-    centure_phone = models.IntegerField(blank=True, null=True)
-    centure_email = models.EmailField(null=False, blank=False)
-    centure_description = models.TextField(null=False, blank=False)
-    centure_promote = models.BooleanField(default=False)
-
+    centure_phone = models.IntegerField(blank=True,null= True)
+    centure_email = models.EmailField(null = False, blank = False)
+    centure_description = models.TextField(null=False,blank=False)
+    centure_promote = models.BooleanField(default= False)
     def __str__(self):
         return self.centure_description
 
 
 class Comment(models.Model):
-    post = models.ForeignKey(Article , on_delete=models.CASCADE,related_name='comments')
+    post = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='comments')
     name = models.CharField(max_length=32, null=False, blank=False)
     email = models.EmailField(null=True)
     date = models.DateField(auto_now_add=True)
     text = models.TextField()
-    permission = models.BooleanField(default=False)
+    permission = models.BooleanField(default=False, null=True, blank=True)
 
     def __str__(self):
-        return "{}       ----by---->       {}".format(self.text, self.name.upper())
+        return "{} ----by----> {}".format(self.text, self.name.upper())
